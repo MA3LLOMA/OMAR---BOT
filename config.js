@@ -7,20 +7,20 @@ import axios from 'axios'
 
 
 global.owner = [
-  ['918360234087', 'WHITE', true], 
-  ['233208179431', 'Abraham Dwamena', true],
-  ['923184070915', '𝙎𝘼𝙇𝙈𝘼𝙉 𝘼𝙃𝙈𝘼𝘿 -(𝘼𝙝𝙢𝙢𝙞)', true], 
-  ['94789481495', '𝙼𝚉𝙽 𝙺𝙸𝙽𝙶 ⚡', true],
-  ['233533763772', 'Abraham Dwamena2', true],
-  ['233531910067', 'Abraham Dwamena3', true],
+  ['212770579205', 'OMAR', true], 
+  ['233208179431', 'Abraham Dwamena', false],
+  ['923184070915', '𝙎𝘼𝙇𝙈𝘼𝙉 𝘼𝙃𝙈𝘼𝘿 -(𝘼𝙝𝙢𝙢𝙞)', ffalse], 
+  ['94789481495', '𝙼𝚉𝙽 𝙺𝙸𝙽𝙶 ⚡', false],
+  ['233533763772', 'Abraham Dwamena2', ffalse],
+  ['233531910067', 'Abraham Dwamena3', false],
   
 ] //Number of owners
 
 //global.pairingNumber = "" //put your bot number here
 
-global.mods = ['923184070915', '94789481495', '923184474176','233531910067','233208179431'] 
-global.prems = ['923184070915','233208179431','94789481495', '918360234087','233531910067']
-global.allowed = ['923184070915', '233208179431', '94789481495', '918360234087','233531910067']
+global.mods = ['212770579205', '212770579205', '212770579205','212770579205','212770579205'] 
+global.prems = ['212770579205','212770579205','212770579205', '212770579205','212770579205']
+global.allowed = ['212770579205', '212770579205', '212770579205', '212770579205','212770579205']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63']
@@ -59,13 +59,13 @@ global.botname = 'XLICON-V2'
 global.premium = 'true'
 global.packname = 'XLICON TEAM' 
 global.author = '@XLICON-V2' 
-global.menuvid = 'https://i.imgur.com/8RO9ZKf.mp4'
+global.menuvid = 'https://i.imgur.com/Ckb8q4C.mp4'
 global.igfg = '▢✓ Follow My channel\nhttps://whatsapp.com/channel/0029VaE8GbCDzgTILE7OtC3e\n' 
 global.dygp = 'https://chat.whatsapp.com/BfH0KLkICn2BjmGFMRcGMW'
 global.fgsc = 'https://github.com/salmanytofficial/XLICON-V2-MD' 
 global.fgyt = 'https://youtube.com/@s4salmanyt'
 global.fgpyp = 'https://youtube.com/@s4salmanyt'
-global.fglog = 'XLICON.jpg' 
+glob//al.fglog = 'XLICON.jpg' 
 global.thumb = fs.readFileSync('./XLICON.jpg')
 
 
