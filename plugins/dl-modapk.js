@@ -2,18 +2,18 @@ import { download } from 'aptoide-scraper';
 
 let handler = async (m, { conn, usedPrefix: prefix, command, text }) => {
   try {
-    if (command === 'modapk') {
-      if (!text) throw `*[❗] Please provide the APK Name you want to download.*`;
-
+    if (command === 'modapk', 'apk', 'app') {
+      if (!text) throw `*🕵🏻‍♂️ أرسل إسم التطبيق الذي تريده* \n *مثال* : *.apk facebook lite*`;
+      m.react(rwait)
       await conn.reply(m.chat, global.wait, m);
       let data = await download(text);
 
-      if (data.size.replace(' MB', '') > 200) {
-        return await conn.sendMessage(m.chat, { text: '*[⛔] The file is too large.*' }, { quoted: m });
+      if (data.size.replace(' MB', '') > 300) {
+        return await conn.sendMessage(m.chat, { text: '*التطبيق كبير جدا حاول مع تطبيق أخر.  🏃🏻‍♂️.*' }, { quoted: m });
       }
 
       if (data.size.includes('GB')) {
-        return await conn.sendMessage(m.chat, { text: '*[⛔] The file is too large.*' }, { quoted: m });
+        return await conn.sendMessage(m.chat, { text: '*التطبيق كبير جدا حاول مع تطبيق أخر 🏃🏻‍♂️.*' }, { quoted: m });
       }
 
       await conn.sendMessage(
@@ -22,12 +22,13 @@ let handler = async (m, { conn, usedPrefix: prefix, command, text }) => {
         { quoted: m }
       )
     }
+  m.react(done)
   } catch {
-    throw `*[❗] An error occurred. Make sure to provide a valid link.*`;
+    throw `*🕵🏻‍♂️ أرسل إسم التطبيق الذي تريده* \n *مثال* : *.apk facebook lite*`;
   }
 };
 
-handler.help = ['modapk']
+handler.help = ['modapk', 'apk', 'app']
 handler.tags = ['downloader']
-handler.command = /^modapk | apk$/i;
+handler.command = ['modapk', 'apk', 'app'];
 export default handler;
