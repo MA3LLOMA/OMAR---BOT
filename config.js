@@ -9,9 +9,9 @@ import axios from 'axios'
 global.owner = [
   ['212770579205', 'OMAR', true], 
   ['233208179431', 'Abraham Dwamena', false],
-  ['923184070915', '𝙎𝘼𝙇𝙈𝘼𝙉 𝘼𝙃𝙈𝘼𝘿 -(𝘼𝙝𝙢𝙢𝙞)', ffalse], 
+  ['923184070915', '𝙎𝘼𝙇𝙈𝘼𝙉 𝘼𝙃𝙈𝘼𝘿 -(𝘼𝙝𝙢𝙢𝙞)', false], 
   ['94789481495', '𝙼𝚉𝙽 𝙺𝙸𝙽𝙶 ⚡', false],
-  ['233533763772', 'Abraham Dwamena2', ffalse],
+  ['233533763772', 'Abraham Dwamena2', false],
   ['233531910067', 'Abraham Dwamena3', false],
   
 ] //Number of owners
