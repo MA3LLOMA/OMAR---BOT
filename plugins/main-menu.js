@@ -21,7 +21,14 @@ import {
 التواصل مع :
 +212770579205
 الانستجرام :
-www.instagram.com/ovmar_1`
+www.instagram.com/ovmar_1
+
+
+ `.trimStart(),
+ header: "┌─⦿『 *_%category_* 』⦿",
+ body: "┃⬡▸ %cmd %isPremium %islimit",
+ footer: "╰─────────────────⦿",
+ after: "\n%me",
  }
  let handler = async (m, {
   conn,
