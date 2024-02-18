@@ -14,6 +14,6 @@ let handler = async (m, { conn, text }) => {
 
 handler.help = ['bingimg <query>']
 handler.tags = ['AI']
-handler.command = /^bingimg$/i
+handler.command = /^bingimg1$/i
 
 export default handler
