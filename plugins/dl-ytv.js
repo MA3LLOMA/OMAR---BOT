@@ -20,10 +20,10 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
   }
   const data = await response.json();
 
-  const caption = ` هاذا هو الفديوي الخاص بك
+  const caption = ` هاذا هو الفديو الخاص بك
 
   تابعني على انستجرام  😀❤️
-  www.instagram.com/ovmar_1 `
+  www.instagram.com/ovmar_1`
 
   let vid = await fetch(gapi)
   const vidBuffer = await vid.buffer();
