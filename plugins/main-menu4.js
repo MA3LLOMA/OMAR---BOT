@@ -13,7 +13,7 @@ import {
 
   
    let groupmenu = `
-   ✦ ───『 *group* 』─── ⚝
+   ✦ ───『 *مجموعة* 』─── ⚝
   ➫ .getbio <@tag/reply>  Ⓛ
   ➫ .animequote
   ➫ .Setdesc <text>
