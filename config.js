@@ -69,7 +69,7 @@ global.fglog = 'XLICON.jpg'
 global.thumb = fs.readFileSync('./XLICON.jpg')
 
 
-global.wait = 'سوف يتم تلبية طلبك🏃🏻‍♂️. \n \n قم بمتابعتي على انستجرام لدعمي على هاذا الجهد ❤️ \n www.instagram.com/ovmar_1'
+global.wait = 'سوف يتم تلبية طلبك🏃🏻‍♂️. \n \n قم بمتابعتي على انستجرام لدعمي على هاذا الجهد ❤️ \n https://www.instagram.com/ovmar_1 \n'
 global.rwait = '⌛'
 global.dmoji = '🤭'
 global.done = '✔️'
