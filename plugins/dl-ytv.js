@@ -20,17 +20,10 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
   }
   const data = await response.json();
 
-  const caption = `✼ ••๑⋯❀ Y O U T U B E ❀⋯⋅๑•• ✼
-	  
-  ❏ Title: ${data.result.title}
-  ❏ Channel: ${data.result.channel}
-  ❐ Duration: ${data.result.seconds} seconds
-  ❑ Views: ${data.result.view}
-  ❒ Upload: ${data.result.publicDate}
-  ❒ Link: ${args[0]}
-  
-  ⊱─━⊱༻●༺⊰━─⊰`
+  const caption = ` هاذا هو الفديوي الخاص بك
 
+  تابعني على انستجرام  😀❤️
+  www.instagram.com/ovmar_1 `
 
   let vid = await fetch(gapi)
   const vidBuffer = await vid.buffer();
