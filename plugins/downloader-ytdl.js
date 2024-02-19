@@ -6,7 +6,7 @@ let handler = async (m, {
     isPrems,
     isOwner
 }) => {
-    if (!args[0]) return m.reply('Link?')
+    if (!args[0]) return m.reply('رابط الفيديو؟')
     const sections = [{
             title: "🎙️ Audio",
             rows: [{
