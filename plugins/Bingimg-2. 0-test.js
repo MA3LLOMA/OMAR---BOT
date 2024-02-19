@@ -11,7 +11,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     
     if (response.ok) {
       const imageBuffer = await response.buffer();
-      await conn.sendFile(m.chat, imageBuffer, 'image.jpg', null, m);
+      await conn.sendFile(m.chat, imageBuffer, 'image.jpg', true, m);
     } else {
       throw '*Image generation failed*';
     }
