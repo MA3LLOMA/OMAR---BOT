@@ -33,6 +33,6 @@ let handler = async (m, {
 }
 handler.help = ["aptdown"]
 handler.tags = ["tools"]
-handler.command = /^ap(ptoided(own|l)|toided(own|l))$/i
+handler.command = /aptdown$/i
 
 export default handler
