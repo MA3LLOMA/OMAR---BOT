@@ -68,7 +68,7 @@ global.fgpyp = 'https://whatsapp.com/channel/0029VaPj1XN2975EPpWx4p27'
 global.fglog = 'XLICON.jpg' 
 global.thumb = fs.readFileSync('./XLICON.jpg')
 
-global.wait = '_*سوف يتم تلبية طلبك بسرعة.. 🏃🏻‍♂️*_ \n لماذا لاتنظم الى مجموعتنا على واتساب ❤️🫠 \n \n *https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ*'
+global.wait = '_*سوف يتم تلبية طلبك بسرعة.. 🏃🏻‍♂️*_ \n\n *لماذا لاتنظم الى مجموعتنا على واتساب ❤️🫠* \n *https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ*'
 //global.wait = 'سوف يتم تلبية طلبك🏃🏻‍♂️. \n \n قم بمتابعتي على انستجرام لدعمي على هاذا الجهد ❤️ \n https://www.instagram.com/ovmar_1 \n'
 global.rwait = '⌛'
 global.dmoji = '🤭'
