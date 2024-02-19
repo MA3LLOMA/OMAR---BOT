@@ -5,9 +5,9 @@ import { mediafiredl } from '@bochilteam/scraper'
 let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) => {
 	var limit
      if((isOwner || isPrems)) limit = 1200
-     else limit = 1000
-   if (!args[0]) throw `✳️ Enter the mediafire link next to the command`
-    if (!args[0].match(/mediafire/gi)) throw `❎ Link incorrect`
+     else limit = 300
+   if (!args[0]) throw `هاذا الأمر خاص بالتحميل من ميديافير\n *مثال* \n. mediafire https://www.mediafire.com/file/23kcob2r7n5x2x7/النسخ+الشامل+مهكر_3.2.7z/file`
+    if (!args[0].match(/mediafire/gi)) throw `|🤦🏻‍♂️| الرابط لايعمل`
     m.react(rwait)
     let full = /f$/i.test(command)
     let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
@@ -16,13 +16,13 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) =
     let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
     let isLimit = (isPrems || isOwner ? limit : limit) * 1012 < filesize
     let caption = `
-   ≡ *MEDIAFIRE*
+   ≡ *ميديافير*
 
-▢ *Number:* ${filename}
-▢ *Size:* ${filesizeH}
-▢ *Extension:* ${ext}
-▢ *Uploaded:* ${aploud}
-${isLimit ? `\n▢ The file exceeds the download limit *+${limit} MB*\nUpgrade to premium to be able to download files more than *900 MB*` : ''} 
+▢ *رقم الحزمة:* ${filename}
+▢ *الحجم:* ${filesizeH}
+▢ *امتداد:* ${ext}
+▢ *تم الرفع:* ${aploud}
+`*الملف كبير قم بالترقية*` : ''} 
 `.trim()
     await conn.sendFile(m.chat, ss, 'ssweb.png', caption, m)
     
