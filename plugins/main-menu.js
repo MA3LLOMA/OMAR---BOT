@@ -168,14 +168,14 @@ www.instagram.com/ovmar_1
  
   conn.sendMessage(m.chat, { video: { url: menuvid }, caption: text.trim(),  gifPlayback: true,
   gifAttribution: 0}, { quoted: contact })
-    conn.sendMessage(m.chat, {audio: { url: 'https://a.uguu.se/gRtEvvGO.mp3' }, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+    conn.sendMessage(m.chat, {audio: { url: 'https://files.catbox.moe/ffldcp.mp3' }, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
 
   } catch (e) {
    await conn.reply(m.chat, " error", m)
    throw e
   }
  }
- handler.command = /^(menu|help|\?)$/i
+ handler.command = /^(menu|help|عمر|omar|اوامر|\?)$/i
  
 
  
