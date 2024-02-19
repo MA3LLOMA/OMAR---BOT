@@ -10,7 +10,7 @@ let handler = async (m, {
     usedPrefix
 }) => {
     let regex = /^[a-z]\w*(\.[a-z]\w*)+$/i
-    if (!regex.test(text)) throw "Input package name"
+    if (!regex.test(text)) throw "قم باإرسال إسم الباكاج الخاص بالتطبيق\n مثال .aptdown whatsapp.media"
     try {
         let aptodl = await download(text)
         await m.reply(wait)
@@ -31,7 +31,7 @@ let handler = async (m, {
         await m.reply(eror)
     }
 }
-handler.help = ["aptoidedown"]
+handler.help = ["aptdown"]
 handler.tags = ["tools"]
 handler.command = /^ap(ptoided(own|l)|toided(own|l))$/i
 
