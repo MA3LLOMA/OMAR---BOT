@@ -22,7 +22,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) =
 ▢ *الحجم:* ${filesizeH}
 ▢ *امتداد:* ${ext}
 ▢ *تم الرفع:* ${aploud}
-`*الملف كبير قم بالترقية*` : ''} 
+${isLimit`\n *الملف كبير قم بالترقية* ` : ''} 
 `.trim()
     await conn.sendFile(m.chat, ss, 'ssweb.png', caption, m)
     
