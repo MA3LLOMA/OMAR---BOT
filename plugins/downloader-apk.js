@@ -21,11 +21,11 @@ Download Link: ${apkData.dllink}
       `;
       await conn.sendFile(m.chat, apkData.dllink, `${apkData.name}.apk`, message, m);
     } else {
-      conn.reply(m.chat, 'Tidak dapat menemukan informasi APK', m);
+      conn.reply(m.chat, 'أعتذر لم اجد هاذا التطبيق 🤕 ..', m);
     }
   } catch (error) {
     console.error(error);
-    conn.reply(m.chat, 'Terjadi kesalahan saat memproses permintaan', m);
+    conn.reply(m.chat, 'واسمح لي أن أعرف إذا كان لديك أي أسئلة', m);
   }
 };
 
