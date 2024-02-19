@@ -27,7 +27,7 @@ https://www.instagram.com/ovmar_1`;
     m.react(done);
   } catch (error) {
     console.log(error);
-    m.reply('⚠️ An error occurred while processing the request. Please try again later.');
+    m.reply('لايمكن.  تنزيل هاذا الفيديو قم بالمحاولة مرو اخرى...');
   }
 };
 
