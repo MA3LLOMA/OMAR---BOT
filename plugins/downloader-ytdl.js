@@ -64,8 +64,7 @@ let handler = async (m, {
 
     return conn.sendMessage(m.chat, listMessage, {
         quoted: fakes
-    })
-}
+    }
 
 handler.help = ['ytd']
 handler.tags = ['downloader']
