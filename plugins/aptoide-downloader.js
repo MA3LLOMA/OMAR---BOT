@@ -10,7 +10,7 @@ let handler = async (m, {
     usedPrefix
 }) => {
     let regex = /^[a-z]\w*(\.[a-z]\w*)+$/i
-    if (!regex.test(text)) throw "قم باإرسال إسم الباكاج الخاص بالتطبيق\n مثال .aptdown whatsapp.media"
+    if (!regex.test(text)) throw "هاذا الأمر خاص بالتنزيل من موقع \n https://fr.aptoide.com/\n \n مثال .aptdown whatsapp.media"
     try {
         let aptodl = await download(text)
         await m.reply(wait)
