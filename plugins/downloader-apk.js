@@ -11,21 +11,21 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (data.status) {
       const apkData = data.data;
       const message = `
-*Informasi APK*
-Nama: ${apkData.name}
-Last Update: ${apkData.lastup}
-Package: ${apkData.package}
-Size: ${apkData.size}
-Icon: ${apkData.icon}
-Download Link: ${apkData.dllink}
+*معلومات التطبيق*
+*إسم التطبيق*: ${apkData.name}
+*أخر تحديث*: ${apkData.lastup}
+الحزمة: ${apkData.package}
+*الحجم*: ${apkData.size}
+*صورة التطبيق*: ${apkData.icon}
+*رابط التحميل*: ${apkData.dllink}
       `;
-      await conn.sendFile(`wait`);
+      await conn.sendFile(`m.chat, apkData.dllink, `${apkData.name}.apk`, message, m);
     } else {
-      conn.reply(m.chat, 'Tidak dapat menemukan informasi APK', m);
+      conn.reply(m.chat, 'هناك مشكلة في الحزمة', m);
     }
   } catch (error) {
     console.error(error);
-    conn.reply(m.chat, 'Terjadi kesalahan saat memproses permintaan', m);
+    conn.reply(m.chat, 'حدث خطأ في الإرسال. أعتذر', m);
   }
 };
 
