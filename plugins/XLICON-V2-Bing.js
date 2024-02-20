@@ -25,7 +25,7 @@ let handler = async (message, {
 
 handler.help = ["bing"];
 handler.tags = ['AI'];
-handler.command = /^(bing)$/i;
+handler.command = /^(bing1)$/i;
 export default handler;
 
 async function Bing(queryText) {
