@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 let handler = async (m, { text,  usedPrefix,  command }) => {
     if (!text) throw `Hey is there anything I can help you with??`
     let order = { text: wait, mentions: [m.sender], contextInfo: { forwardingScore: 256, isForwarded: true }};
-let aii = await fetch(`https://api.lolhuman.xyz/api/openai?apikey=${apilol}
+let aii = await fetch(`https://api.lolhuman.xyz/api/openai?apikey=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`
 &text=${text}&user=user-unique-en`)
   let oke = await aii.json()
   let { key } = await conn.sendMessage(m.chat, order, { quoted: m });
