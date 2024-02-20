@@ -31,7 +31,7 @@ conn.sendFile(m.chat, buff, ran, null, m, true, {
 type: 'audioMessage', 
 ptt: true 
 })})
-} else throw `هاذا الأمر خاص بتغير الأصوات قم باإرسال أغنية أو أوديو 🤖 *${usedPrefix + command}*`
+} else throw `${lenguajeGB['smsAvisoMG']()}${mid.smsconvert16} *${usedPrefix + command}*`
 } catch (e) {
 throw e
 }}
