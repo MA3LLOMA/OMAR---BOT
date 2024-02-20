@@ -25,13 +25,13 @@ let filename = join(__dirname, '../tmp/' + ran)
 let media = await q.download(true)
 exec(`ffmpeg -i ${media} ${set} ${filename}`, async (err, stderr, stdout) => {
 await unlinkSync(media)
-if (err) throw `Error`
+if (err) throw `_*Error!*_`
 let buff = await readFileSync(filename)
 conn.sendFile(m.chat, buff, ran, null, m, true, {
 type: 'audioMessage', 
 ptt: true 
 })})
-} else throw `*Reply your audio or vn that will be modified, using the command ${usedPrefix + command}*`
+} else throw `هاذا الأمر خاص بتغير الأصوات قم باإرسال أغنية أو أوديو 🤖 *${usedPrefix + command}*`
 } catch (e) {
 throw e
 }}
