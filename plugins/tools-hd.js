@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || q.mediaType || ""
   if (!mime)
-    throw `Fotonya Mana Kak?`
+    throw `هاذا الأمر يقوم بتحسين جود الصورة قم باإرسال الصور وقم بالرد \n\n .hd \n .remini \n`
   if (!/image\/(jpe?g|png)/.test(mime))
     throw `Mime ${mime} tidak support`
   else conn.hdr[m.sender] = true;
@@ -16,8 +16,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let img = await q.download?.()
   let error
   try {
-    const This = await processing(img, "enhance")
-    conn.sendFile(m.chat, This, "", "Sudah Jadi Kak >//<", m)
+    const This = await processing('wait')
+    conn.sendFile(m.chat, This, "", "تابع صانع البوت في إنستجرام ❤️ \n\n https://www.instagram.com/ovmar_1", m)
   } catch (er) {
     error = true
   } finally {
@@ -32,7 +32,7 @@ handler.help = ['hd', 'remini']
 handler.tags = ['ai']
 handler.command = /^(hd|remini)$/i
 
-handler.register = true
+handler.register = falss
 handler.limit = 5
 handler.disable = false
 
