@@ -1,7 +1,7 @@
 //thanks To Guru
 
 import fetch from 'node-fetch';
-import displayLoadingScreen from '../lib/loading.js';
+import displayLoadingScreen from ('wait');
 let handler = async (m, { conn, text }) => {
     if (!text) {
         console.log('No song name provided.');
