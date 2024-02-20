@@ -44,7 +44,7 @@ let handler = async m => m.reply(`
 ┗━━━━━━━━━━━━━━━━
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['modapk1']
-handler.tags = ['tools']
+handler.tags = ['downloader']
 handler.command = /^(modapk1)$/i
 
 export default handler 
