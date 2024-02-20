@@ -1,64 +1,147 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!args[0]) throw `*هاذا الأمر يختص في تنزيل قصص الإنستجرام*\n\n *مثال: .igstory ovmar_1*`
-try {
-await m.reply(global.wait)    
-const res = await fetch(`https://api.lolhuman.xyz/api/igstory/${args[0]}?apikey=${lolkeysapi}`)
-var anu = await res.json()
-var anuku = anu.result
-if (anuku == '') return m.reply(`${lenguajeGB['smsAvisoFG']()}${mid.smsInsta3}`)  
-for (var i of anuku) {
-let res = await axios.head(i)
-let mime = res.headers['content-type'] 
-if (/image/.test(mime)) await conn.sendFile(m.chat, i, 'error.jpg', null, m).catch(() => { return m.reply(`${lenguajeGB['smsAvisoFG']()}${mid.smsInsta3}`)})
-if (/video/.test(mime)) await conn.sendFile(m.chat, i, 'error.mp4', null, m).catch(() => { return m.reply(`${lenguajeGB['smsAvisoFG']()}${mid.smsInsta3}`)})
-conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}${mid.smsinfo}`, m, { contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, 
-title: '𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿 | 𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨',
-body: 'Super Bot WhatsApp',         
-previewType: 0, thumbnail: fs.readFileSync("./XLICON.jpg"),
-sourceUrl: `https://github.com/MA3LLOMA/OMAR---BOT}}})
-}} catch (e) {
-await conn.reply(`wait`)
-console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
-console.log(e)}}
-handler.help = ['igstory <username>']
+const hx = require('hxz-api')
+
+let handler = async (m, { conn, args }) => {
+  if (/https?:\/\/(www\.)?instagram\.com\/(p|reel|tv)/i.test(m.text)) throw `Masukkan username Instagram, bukan link instagramnya!`
+   if (!args[0]) throw `Masukkan username Instagram yang ingin diambil story nya!`
+   else m.reply('Proses')
+   
+   hx.igstory(args[0]).then(async (r) => {
+     for (let i = 0; i < r.medias.length; i++) {
+       conn.sendFile(m.chat, r.medias[i].url, '', '', m)
+       }
+     })
+   }
+
+handler.help = ['igstory'].map(v => v + ' <username>')
 handler.tags = ['downloader']
-handler.command = ['igstory', 'ighistoria', 'ighistorias' ]
-handler.limit = 3
-handler.exp = 87
-export default handler
+handler.command = /^(igs(tory)?)$/i
+handler.limit = true
+module.exports = handler
 
 
-/*import axios from 'axios'
-import hx from 'hxz-api' 
-
-let handler = async (m, { conn, args, usedPrefix, command, text}) => {
-if (!text) throw `${lenguajeGB['smsAvisoMG']()}𝙄𝙉𝙂𝙍𝙀𝙎𝙀 𝙀𝙇 𝙉𝙊𝙈𝘽𝙍𝙀 𝘿𝙀 𝙐𝙎𝙐𝘼𝙍𝙄𝙊 𝘿𝙀 𝙄𝙉𝙎𝙏𝘼𝙂𝙍𝘼𝙈 𝙋𝘼𝙍𝘼 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙍 𝙇𝘼𝙎 𝙃𝙄𝙎𝙏𝙊𝙍𝙄𝘼𝙎\n𝙀𝙅𝙀𝙈𝙋𝙇𝙊\n*${usedPrefix + command} gatadios*\n\n𝙀𝙉𝙏𝙀𝙍 𝙄𝙉𝙎𝙏𝘼𝙂𝙍𝘼𝙈 𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀 𝙏𝙊 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿 𝙎𝙏𝙊𝙍𝙄𝙀𝙎\n𝙀𝙓𝘼𝙈𝙋𝙇𝙀\n*${usedPrefix + command} gata_dios*`
-
-hx.igstory(text).then(async (result) => {
-for (let i of result.medias) {
-if (i.url.includes("mp4")) {            
-conn.sendFile(m.chat, i.url, 'igstory.mp4', wm, m)
-} else {     
-conn.sendFile(m.chat, i.url, '', '', m)
-}}}); 
-  
-let info = `💖 *Infórmate sobre las Novedades y recuerda tener la última versión.*\n\n💝 *Find out about what's new and remember to have the latest version.*
-  `
- conn.sendButton(m.chat, info, `𝙂𝘼𝙏𝘼 𝘿𝙄𝙊𝙎 - 𝘼𝙎𝙄𝙎𝙏𝙀𝙉𝘾𝙄𝘼\n${asistencia}\n\n`, [
-['𝙈𝙚𝙣𝙪 𝘿𝙚𝙨𝙘𝙖𝙧𝙜𝙖𝙨 🌀', '#descargasmenu'],
-['𝙈𝙚𝙣𝙪 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙤 | 𝙁𝙪𝙡𝙡 𝙈𝙚𝙣𝙪 ✨', '.allmenu'],
-['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪 ☘️', '/menu']], m)
-/*.trim()  
-await conn.sendHydrated(m.chat, info, wm, null, ig, '𝙄𝙣𝙨𝙩𝙖𝙜𝙧𝙖𝙢', null, null, [
-['𝙈𝙚𝙣𝙪 𝘿𝙚𝙨𝙘𝙖𝙧𝙜𝙖𝙨 🌀', '#descargasmenu'],
-['𝙈𝙚𝙣𝙪 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙤 | 𝙁𝙪𝙡𝙡 𝙈𝙚𝙣𝙪 ✨', '.allmenu'],
-['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪 ☘️', '/menu']
-], m,)  
+/*let fetch = require('node-fetch')
+let handler = async (m, { conn, args }) => {
+  if (!args[0]) throw 'Uhm...url nya mana?'
+  let res = await fetch(global.API('xteam', '/dl/igs', {
+    nama: args[0]
+  }, 'APIKEY'))
+  let json = await res.json()
+  if (res.status != 200) throw json
+  if (json.result.error) throw json.result.message
+  let { username, storylist } = json.result
+  let dateConfig = {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  }
+  for (let { url, type, taken_at } of storylist)
+    conn.sendFile(m.chat, url, 'ig' + (type == 'video' ? '.mp4' : '.jpg'), `
+@${username}
+Memposting pada ${new Date(taken_at * 1000).toLocaleDateString('id', dateConfig)}
+`, m)
+  throw json.result
 }
-handler.help = ['igstory <username>']
+handler.help = ['igstory'].map(v => v + ' <username>')
 handler.tags = ['downloader']
-handler.command = ['igstory', 'ighistoria', 'ighistorias' ]
-handler.limit = 3
-handler.exp = 87
-export default handler
-*/
+
+handler.command = /^(igs(tory)?)$/i
+
+module.exports = handler*/
+
+
+
+
+//const { igstory } = require('../lib/scrape')
+/*const cheerio = require('cheerio')
+const fetch = require('node-fetch')
+const axios = require("axios")
+
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+
+  if (!args[0]) throw `Pengunaan:\n${usedPrefix + command} <username/url>\n\nContoh:\n\n${usedPrefix + command} <username/url>`
+  if (args[0].startsWith('http') || args[0].startsWith('@')) throw `username salah`
+
+  igstory(args[0]).then(async res => {
+    let igs = JSON.stringify(res)
+    let json = JSON.parse(igs)
+    await m.reply(global.wait)
+    for (let { downloadUrl, type } of json)
+      conn.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '*Nih*', m)
+
+  })
+
+}
+handler.help = ['igstory'].map(v => v + ' <username>')
+handler.tags = ['downloader']
+handler.command = /^(igs(tory)?)$/i
+handler.limit = true
+handler.group = true
+
+module.exports = handler
+
+
+function igstory(username) {
+    return new Promise(async (resolve, reject) => {
+        axios.request({
+            url: 'https://www.instagramsave.com/instagram-story-downloader.php',
+            method: 'GET',
+            headers: {
+                "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+                "cookie": "PHPSESSID=ugpgvu6fgc4592jh7ht9d18v49; _ga=GA1.2.1126798330.1625045680; _gid=GA1.2.1475525047.1625045680; __gads=ID=92b58ed9ed58d147-221917af11ca0021:T=1625045679:RT=1625045679:S=ALNI_MYnQToDW3kOUClBGEzULNjeyAqOtg"
+            }
+        })
+            .then(({ data }) => {
+                const $ = cheerio.load(data)
+                const token = $('#token').attr('value')
+                let config = {
+                    headers: {
+                        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                        "sec-ch-ua": '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
+                        "cookie": "PHPSESSID=ugpgvu6fgc4592jh7ht9d18v49; _ga=GA1.2.1126798330.1625045680; _gid=GA1.2.1475525047.1625045680; __gads=ID=92b58ed9ed58d147-221917af11ca0021:T=1625045679:RT=1625045679:S=ALNI_MYnQToDW3kOUClBGEzULNjeyAqOtg",
+                        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+                    },
+                    data: {
+                        'url': 'https://www.instagram.com/' + username,
+                        'action': 'story',
+                        'token': token
+                    }
+                }
+                axios.post('https://www.instagramsave.com/system/action.php', qs.stringify(config.data), { headers: config.headers })
+                    .then(({ data }) => {
+                        resolve(data.medias)
+                    })
+            })
+            .catch(reject)
+    })
+}*/
+
+
+
+
+/*
+let axios = require('axios')
+let cheerio = require('cheerio')
+let fetch = require('node-fetch')
+
+let handler = async (m, { conn, args, text, usedPrefix, command }) => {
+  if (!text) throw `*Perintah ini untuk mengunduh postingan instagram story*\n\nContoh:\n${usedPrefix + command} alinursetiawan24`
+  let res = await fetch(`https://megayaa.herokuapp.com/api/igstori?username=${text}`)
+   if (!res.ok) return m.reply('Error')
+   let json = await res.json()
+   if (!json.status) throw json
+    await m.reply('Sedang di proses..')
+    for (let { url, type } of json.data) {
+      await conn.delay(1500)
+      conn.sendFile(m.chat, url, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '', m)
+    }
+}
+handler.help = ['igstory'].map(v => v + ' <username>')
+handler.tags = ['downloader']
+handler.command = /^(igs(tory)?)$/i
+handler.limit = true
+handler.group = true
+
+module.exports = handler*/
