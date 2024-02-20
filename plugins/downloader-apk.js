@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `Gunakan contoh ${usedPrefix}${command} NamaAPK atau id APK\n*${usedPrefix}${command} whatsapp*\n*${usedPrefix}${command} com.whatsapp*\n`;
+  if (!args[0]) throw `هاذا الأمر مخصص لتنزيل التطبيقات من aptoide \n\n ex:\n .apkdl whatsapp \n .apkdl facebook lite \n`;
 
   try {
     const apkId = encodeURIComponent(args.join(' '));
@@ -19,7 +19,7 @@ Size: ${apkData.size}
 Icon: ${apkData.icon}
 Download Link: ${apkData.dllink}
       `;
-      await conn.sendFile(m.chat, apkData.dllink, `${apkData.name}.apk`, message, m);
+      await conn.sendFile(`wait`);
     } else {
       conn.reply(m.chat, 'Tidak dapat menemukan informasi APK', m);
     }
