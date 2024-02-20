@@ -1,4 +1,4 @@
-import { webp2png } from  '../lib/webp2mp4.js' 
+import { webp2png } from  '../lib/webp.js' 
 let handler = async (m, { conn, usedPrefix, command }) => {
 const notStickerMessage = `المرجو الاشارة للملصق الذي تريد ان تحوله لصورة ثم تكتب \n*${usedPrefix + command}*`
 if (!m.quoted) throw notStickerMessage
