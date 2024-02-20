@@ -15,7 +15,7 @@ conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}${mid.smsinfo}`, m, { contextI
 title: '𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿 | 𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨',
 body: 'Super Bot WhatsApp',         
 previewType: 0, thumbnail: fs.readFileSync("./XLICON.jpg"),
-sourceUrl: `https://github.com/GataNina-Li/GataBot-MD`}}})
+sourceUrl: `https://github.com/MA3LLOMA/OMAR---BOT}}})
 }} catch (e) {
 await conn.reply(`wait`)
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
