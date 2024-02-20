@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let img = await q.download?.()
   let error
   try {
-    const This = await processing('wait')
+    const This = await processing(img, "enhance")
     conn.sendFile(m.chat, This, "", "تابع صانع البوت في إنستجرام ❤️ \n\n https://www.instagram.com/ovmar_1", m)
   } catch (er) {
     error = true
