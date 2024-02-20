@@ -74,7 +74,7 @@ ${Object.entries(item.download.apkTechnicalInfo)
     }
 }
 handler.help = ["apkcafe"]
-handler.tags = ["applications"]
+handler.tags = ["downloader"]
 handler.command = /^(apkcafe)$/i
 handler.premium = false
 export default handler
