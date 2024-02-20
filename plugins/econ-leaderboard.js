@@ -65,7 +65,7 @@ ${sortedExp.slice(0, len).map(({ jid, exp, credit, level, bank, role }, i) => {
 };
 
 handler.help = ['leaderboard'];
-handler.tags = ['core'];
+handler.tags = ['main'];
 handler.command = ['leaderboard', 'lb'];
 
 export default handler;
