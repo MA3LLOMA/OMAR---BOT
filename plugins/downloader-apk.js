@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `هاذا الأمر مخصص لتنزيل التطبيقات من aptoide \n\n ex:\n .apkdl whatsapp \n .apkdl facebook lite \n`;
+  if (!args[0]) throw `*هاذا الأمر مخصص بالتنزيل من موقع aptoide \n \n شرح التنزيل \n .apkdl whatsapp \n .apkdl facebook lite \n`;
 
   try {
     const apkId = encodeURIComponent(args.join(' '));
@@ -11,21 +11,21 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (data.status) {
       const apkData = data.data;
       const message = `
-*معلومات التطبيق*
-*إسم التطبيق*: ${apkData.name}
-*أخر تحديث*: ${apkData.lastup}
+*معلومات التنزيل*
+إسم التطبيق: ${apkData.name}
+أخر تحديث: ${apkData.lastup}
 الحزمة: ${apkData.package}
-*الحجم*: ${apkData.size}
-*صورة التطبيق*: ${apkData.icon}
-*رابط التحميل*: ${apkData.dllink}
+الحجم: ${apkData.size}
+صورة التطبيق: ${apkData.icon}
+رابط التنزيل: ${apkData.dllink}
       `;
-      await conn.sendFile(`m.chat, apkData.dllink, `${apkData.name}.apk`, message, m);
+      await conn.sendFile(m.chat, apkData.dllink, `${apkData.name}.apk`, message, m);
     } else {
-      conn.reply(m.chat, 'هناك مشكلة في الحزمة', m);
+      conn.reply(m.chat, 'أعتذر', m);
     }
   } catch (error) {
     console.error(error);
-    conn.reply(m.chat, 'حدث خطأ في الإرسال. أعتذر', m);
+    conn.reply(m.chat, 'هنا مشكلة في الإرسال. أعتذر', m);
   }
 };
 
