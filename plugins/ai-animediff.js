@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         m.react(done)
       } catch (e) {
         console.log(e)
-        m.reply(eror)
+        //m.reply(eror)
       }
 
     }
