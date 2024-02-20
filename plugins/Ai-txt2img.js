@@ -13,7 +13,7 @@ const payloads = {
     seed: null,
     enhance_prompt: "no",
     multi_lingual: "no",
-    image_num: 1,  
+    image_num: 7,  
     panorama: "no",
     safety_checker: "no",
     safety_checker_type: "blur",
