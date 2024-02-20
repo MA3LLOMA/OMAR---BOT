@@ -2,7 +2,7 @@
 import fg from 'api-dylux' 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-	if (!args[0]) throw `✳️ Enter a Google Drive link`
+	if (!args[0]) throw `أرسل رابط Google Drive`
 	m.react(rwait) 
 	try {
 	let res = await fg.GDriveDl(args[0])
@@ -20,9 +20,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }
 }
 handler.help = ['gdrive']
-handler.tags = ['downloader', 'premium']
+handler.tags = ['downloader']
 handler.command = ['gdrive']
 handler.credit = true
-handler.premium = true
+handler.premium = false
 
 export default handler
