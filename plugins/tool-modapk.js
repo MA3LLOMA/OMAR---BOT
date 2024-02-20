@@ -43,8 +43,8 @@ let handler = async m => m.reply(`
 ┃https://realsht.mobi/hrTdE
 ┗━━━━━━━━━━━━━━━━
 `.trim()) // Tambah sendiri kalo mau
-handler.help = ['modapk']
+handler.help = ['modapk1']
 handler.tags = ['tools']
-handler.command = /^(modapk)$/i
+handler.command = /^(modapk1)$/i
 
 export default handler 
