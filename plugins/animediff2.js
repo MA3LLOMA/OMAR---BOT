@@ -25,6 +25,6 @@ handler.command = /^(animediff2)$/i
 
 handler.premium = false
 handler.limit = 2
-handler.register = true
+handler.register = false
 
 export default handlera
