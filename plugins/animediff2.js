@@ -10,7 +10,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     try {
         let url = `https://aemt.me/v5/text2img?text=${text}`
 
-        await conn.sendFile(m.chat, await (await fetch(url)).buffer(), 'fubuki.jpg', wm, m)
+        await conn.sendFile(m.chat, await (await fetch(url)).buffer(), 'fubuki.jpg', تابع صانع البوت على إنستجرام❤️ \n www.instagram.com/ovmar_1, m)
         m.react(done)
 
     } catch (e) {
