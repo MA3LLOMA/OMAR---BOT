@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     await conn.relayMessage(m.chat, { reactionMessage: { key: m.key, text: '👌' } }, { messageId: m.key.id })
     try {
-        let url = `https://aemt.me/ai/text2img?text=${text}`
+        let url = `https://aemt.me/v5/text2img?text=${text}`
 
         await conn.sendFile(m.chat, await (await fetch(url)).buffer(), 'fubuki.jpg', wm, m)
         m.react(done)
@@ -19,9 +19,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 }
 
-handler.help = ['animediff <prompt>']
+handler.help = ['animediff2 <prompt>']
 handler.tags = ['ai']
-handler.command = /^(animediff)$/i
+handler.command = /^(animediff2)$/i
 
 handler.premium = false
 handler.limit = 2
