@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!args[0]) throw `${lenguajeGB['smsAvisoMG']()}${mid.smsInsta2}\n*${usedPrefix + command} gata_dios*`
+if (!args[0]) throw `*هاذا الأمر يختص في تنزيل قصص الإنستجرام*\n\n *مثال: .igstory ovmar_1*`
 try {
 await m.reply(global.wait)    
 const res = await fetch(`https://api.lolhuman.xyz/api/igstory/${args[0]}?apikey=${lolkeysapi}`)
@@ -14,7 +14,7 @@ if (/video/.test(mime)) await conn.sendFile(m.chat, i, 'error.mp4', null, m).cat
 conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}${mid.smsinfo}`, m, { contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, 
 title: '𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿 | 𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨',
 body: 'Super Bot WhatsApp',         
-previewType: 0, thumbnail: fs.readFileSync("./media/menus/Menu3.jpg"),
+previewType: 0, thumbnail: fs.readFileSync("./XLICON.jpg"),
 sourceUrl: `https://github.com/GataNina-Li/GataBot-MD`}}})
 }} catch (e) {
 await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['smsMensError2']()} ${usedPrefix + command}\n\n${wm}`, m)
