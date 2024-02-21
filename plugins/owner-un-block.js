@@ -4,9 +4,9 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
     if (!who) conn.reply(m.chat, why, m, { mentions: [m.sender] })
     let res = [];
     switch (command) {
-      case "b":
+      case "block":
       case "unblock":
-        if (who) await conn.updateBlockStatus(who, "b").then(() => { res.push(who); })
+        if (who) await conn.updateBlockStatus(who, "block").then(() => { res.push(who); })
         else conn.reply(m.chat, why, m, { mentions: [m.sender] })
         break;
       case "unblock":
