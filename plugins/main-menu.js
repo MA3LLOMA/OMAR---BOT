@@ -169,16 +169,13 @@ www.instagram.com/ovmar_1
    }
    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, "g"), (_, name) => "" + replace[name])
 conn.sendMessage(m.chat, {
-text: text,
-contextInfo: {
-externalAdReply: {
-title: 'OMAR BOT',
-body: "معا لتطوير الويب المغربي ❤️",
-thumbnailUrl: 'https://telegra.ph/file/2829c7653514416d207e2.jpg',
-sourceUrl: 'https://instagram.com/ovmar_1',
-mediaType: 1,
-renderLargerThumbnail: true
-}}}, { quoted: m})
+const pp = './Assets/XLICON-V2.jpg'
+
+
+ let contact = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
+
+  conn.sendMessage(m.chat, { video: { url: menuvid }, caption: text.trim(),  gifPlayback: true,
+  gifAttribution: 0}, { quoted: contact })
     
     conn.sendMessage(m.chat, {audio: { url: 'https://files.catbox.moe/ffldcp.mp3' }, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
 
