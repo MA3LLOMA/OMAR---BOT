@@ -1,29 +1,21 @@
-import { promises } from 'fs'
-import { join } from 'path'
-import fetch from 'node-fetch'
-import { xpRange } from '../lib/levelling.js'
-//import { plugins } from '../lib/plugins.js'
-let tags = {
-  'morocco':'  ‎أوامر للمغاربة',
-  'applications':'‎ أوامر التطبيقات‎',
-  'drawing':'‎ توليد الصور‎ أوامر' ,
-  'ai':'‎ الذكاء الاصطناعي‎ أوامر',
-  'infobot':'‎ معلومات البوت‎',
-  'downloader':'‎ أوامر التحميلات',
-  'anime':'‎ أوامر عن  الأنيم',
-  'islam':'‎ الدين هو الاسلام‎',
-  'owner':'‎ اوامر صاحب البوت',
-  'search':'‎ أوامر البحث',
-  'audio-changer':'‎ تعديل الصوتيات‎',
-  'sticker':'‎ أوامر الملصقات',
-  'image-edit':'‎ تعديل الصور',
-  'pdf':'‎ pdf ومشتقاته‎',
-  'uploader':'‎‎ رفع الملفات‎',
-}
+import {
+  promises,
+  readFileSync
+ } from "fs"
+ import {
+  join
+ } from "path"
+ import {
+  xpRange
+ } from "../lib/levelling.js"
+ import moment from "moment-timezone"
+ import os from "os"
+ import fs from "fs"
+ import fetch from "node-fetch"
 
  const defaultMenu = {
   before: `
-  مرحبا بك في البوت
+السلام عليكم 
 نحن نقوم بتطوير البوت كي يكون أسرع وأفضل لذا لاتقم بالإتصال او طلب الأشياء الكبيرة لكي ليتوقف البوت
 
 التواصل مع :
@@ -36,7 +28,7 @@ www.instagram.com/ovmar_1
  header: "┌─⦿『 *_%category_* 』⦿",
  body: "┃⬡▸ %cmd",
  footer: "╰─────────────────⦿",
- after: "https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ",
+ after: "By Omar",
  }
  let handler = async (m, {
   conn,
