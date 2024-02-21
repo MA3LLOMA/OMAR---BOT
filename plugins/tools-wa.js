@@ -7,7 +7,7 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
   } else if (m.mentionedJid && m.mentionedJid[0]) {
     waLin = m.mentionedJid[0].replace(/[^0-9]/g, '');
   } else {
-    throw `Please provide a number, quote a user, or mention a user`;
+    throw `*يرجى تقديم رقم أو اقتباس مستخدم أو الإشارة إلى مستخدم*`;
   }
   const waLink = `https://wa.me/${waLin}`;
   const message = `*WhatsApp Link:*\n${waLink}`;
