@@ -9,11 +9,11 @@
 let handler = m => m
 handler.all = async function (m, conn) {
     var vn = "./Assets/ALIVE.mp3"
-    let url = "https://github.com/salmanytofficial"
-    let murl = "https://www.instagram.com/ahmmikun/"
+    let url = "https://github.com/OMARCHARAF0"
+    let murl = "https://www.instagram.com/ovmar_1"
     let hash = global.botname
     let img = "https://i.imgur.com/kQJHMAe.jpg"
-    let num = ["923184070915","923184474176","233533763772","94789481495"]
+    let num = ["212770579205","212770579205","212645483135""]
 
     let doc = {
         audio: {
@@ -27,7 +27,7 @@ handler.all = async function (m, conn) {
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "↺ |◁   II   ▷|   ♡",
+          title: "WELCOME TO OMAR",
           body: hash,
           thumbnailUrl: img,
           sourceUrl: url,
