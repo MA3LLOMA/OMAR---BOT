@@ -18,7 +18,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				let error;
 				try {
 					const This = await processing(img, "dehaze");
-					conn.sendFile(m.chat, This, "", "Nih...", m);
+					conn.sendFile(m.chat, This, "", "تابع صاحب البوت في إنستجرام. \n https://www.instagram.com/ovmar_1", m);
 				} catch (er) {
 					error = true;
 				} finally {
