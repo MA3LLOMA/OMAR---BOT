@@ -7,7 +7,7 @@ let handler = async (m, {
     text,
     command
 }) => {
-    if (!text) return m.reply("قم بكتابة السؤال للذكاء الإصطناعي \nExample: .مرحبا عمر كيف حالك")
+    if (!text) return m.reply("قم بكتابة السؤال للذكاء الإصطناعي \nExample:.ai3 .مرحبا عمر كيف حالك")
     await m.reply(wait);
     try {
         const result = await fetchCompletion(text);
