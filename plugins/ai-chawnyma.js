@@ -19,7 +19,7 @@ let handler = async (m, {
 }
 handler.help = ["ai3"]
 handler.tags = ["ai"];
-handler.command = /^(gpt3 | ai3 | openai3)$/i
+handler.command = /^(ai3)$/i
 export default handler
 
 async function fetchCompletion(inputValue) {
