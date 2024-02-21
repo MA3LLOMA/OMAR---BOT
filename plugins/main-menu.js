@@ -28,7 +28,7 @@ www.instagram.com/ovmar_1
  header: "┌─⦿『 *_%category_* 』⦿",
  body: "┃⬡▸ %cmd",
  footer: "╰─────────────────⦿",
- after: "\n%me",
+ after: "https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ",
  }
  let handler = async (m, {
   conn,
@@ -159,6 +159,7 @@ www.instagram.com/ovmar_1
  totalfeatures,
  role,
  readmore: readMore
+   }
    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, "g"), (_, name) => "" + replace[name])
    const pp = './Assets/XLICON-V2.jpg'
   
@@ -174,6 +175,7 @@ www.instagram.com/ovmar_1
   }
  }
  handler.command = /^(menu|help|\?)$/i
+ 
 
  
  export default handler
@@ -219,4 +221,4 @@ www.instagram.com/ovmar_1
    res = "Good Night 🌙"
   }
   return res
- }
+     }
