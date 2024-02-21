@@ -5,7 +5,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
   try {
     const apkId = encodeURIComponent(args.join(' '));
-    const response = await fetch(`https://vihangayt.me/download/apk?id=${apkId}`);
+    const response = await fetch(`wait`);
     const data = await response.json();
 
     if (data.status) {
