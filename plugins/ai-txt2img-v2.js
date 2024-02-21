@@ -2,7 +2,7 @@ const {
     getModels,
     draw,
     generate
-} = await (await import('../../lib/maker/prodia.js'));
+} = await (await import('../../lib/prodia.js'));
 
 let handler = async (m, {
     command,
