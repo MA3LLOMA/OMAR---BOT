@@ -1,8 +1,17 @@
-import { promises } from 'fs'
-import { join } from 'path'
-import fetch from 'node-fetch'
-import { xpRange } from '../lib/levelling.js'
-//import { plugins } from '../lib/plugins.js'
+import {
+  promises,
+  readFileSync
+ } from "fs"
+ import {
+  join
+ } from "path"
+ import {
+  xpRange
+ } from "../lib/levelling.js"
+ import moment from "moment-timezone"
+ import os from "os"
+ import fs from "fs"
+ import fetch from "node-fetch"
 let tags = {
   'morocco':'  ‎أوامر للمغاربة',
   'applications':'‎ أوامر التطبيقات‎',
