@@ -13,7 +13,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
     m.react(rwait)
     const { key } = await conn.sendMessage(m.chat, {
       image: { url: 'https://i.imgur.com/PkJ6TC4.jpg' },
-      caption: '_*سوف يتم تلبية طلبك...*_ \n\n *تابعنا على انستجرام* \n  _https://www.instagram.com/ovmar_1_'
+      caption: '>_*سوف يتم تلبية طلبك...*_ \n\n *تابعنا على انستجرام* \n  _https://www.instagram.com/ovmar_1_'
     }, {quoted: m})
     conn.sendPresenceUpdate('composing', m.chat);
     const prompt = encodeURIComponent(text);
