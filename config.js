@@ -71,8 +71,8 @@ global.fgpyp = 'https://whatsapp.com/channel/0029VaPj1XN2975EPpWx4p27'
 global.fglog = 'XLICON.jpg' 
 global.thumb = fs.readFileSync('./XLICON.jpg')
 
-  global.wait = 'ثم تبديل المجموعة قم بالإنظمام المجموعة الثانية أو سوف يتم حظرك من البوت ❤️ \n https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt'
-//global.wait = '>.|🏃🏻. *سوف يتم تلبية طلبك..* \n \n *تابع صانع البوت في إنستجرام❤️* \n https://www.instagram.com/ovmar_1'
+//  global.wait = 'ثم تبديل المجموعة قم بالإنظمام المجموعة الثانية أو سوف يتم حظرك من البوت ❤️ \n https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt'
+global.wait = '>.|🏃🏻. *سوف يتم تلبية طلبك..* \n \n *تابع صانع البوت في إنستجرام❤️* \n https://www.instagram.com/ovmar_1'
 //global.wait = '_*سوف يتم تلبية طلبك بسرعة.. 🏃🏻‍♂️*_ \n\n *لماذا لاتنظم الى مجموعتنا على واتساب ❤️🫠* \n *https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ*'
 //global.wait = 'سوف يتم تلبية طلبك🏃🏻‍♂️. \n \n قم بمتابعتي على انستجرام لدعمي على هاذا الجهد ❤️ \n https://www.instagram.com/ovmar_1 \n'
 global.rwait = '⌛'
