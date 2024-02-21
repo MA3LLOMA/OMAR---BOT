@@ -8,7 +8,7 @@ export async function before(m) {
 
     if (!matches || !matches[0] || chat.autodlInstagram !== true) return;
 
-    await m.reply(wait);
+    await m.reply('wait');
 
     try {
         const res = await fetch(`https://vihangayt.me/download/instagram?url=${matches[0]}`);
