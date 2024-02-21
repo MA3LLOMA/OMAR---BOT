@@ -1,6 +1,6 @@
 const {
     BingImageCreator
-} = await (await import('../../lib/bing-image.js'));
+} = await (await import('../lib/bing-image.js'));
 import fetch from 'node-fetch';
 
 const handler = async (m, {
