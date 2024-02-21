@@ -23,7 +23,7 @@ import {
 الانستجرام :
 https://www.instagram.com/ovmar_1
 مجموعتنا على واتساب
-https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ
+https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt
 
 
 
@@ -175,7 +175,7 @@ externalAdReply: {
 title: 'OMAR BOT',
 body: "عمر بوت في خدمتكم 😻",
 thumbnailUrl: 'https://i.imgur.com/mFIzdzq.jpeg',
-sourceUrl: 'https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ',
+sourceUrl: 'https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt',
 mediaType: 1,
 renderLargerThumbnail: true
 }}}, { quoted: m})
