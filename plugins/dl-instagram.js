@@ -1,43 +1,30 @@
-import fetch from 'node-fetch';
+import axios from 'axios'
+import { apivisit } from './kanghit.js'
+import { savefrom } from '@bochilteam/scraper'
 
-let handler = async (m, { conn, usedPrefix, args, command, text }) => {
-  if (!text) throw `You need to give the URL of Any Instagram video, post, reel, image`;
-  m.reply(wait);
-
-  let res;
-  try {
-    res = await fetch(`${gurubot}/igdlv1?url=${text}`);
-  } catch (error) {
-    throw `An error occurred: ${error.message}`;
-  }
-
-  let api_response = await res.json();
-
-  if (!api_response || !api_response.data) {
-    throw `No video or image found or Invalid response from API.`;
-  }
-
-  const mediaArray = api_response.data;
-
-  for (const mediaData of mediaArray) {
-    const mediaType = mediaData.type;
-    const mediaURL = mediaData.url_download;
-
-    let cap = `HERE IS THE ${mediaType.toUpperCase()} >,<`;
-
-    if (mediaType === 'video') {
-      
-      conn.sendFile(m.chat, mediaURL, 'instagram.mp4', cap, m);
-    } else if (mediaType === 'image') {
-      
-      conn.sendFile(m.chat, mediaURL, 'instagram.jpg', cap, m);
-    }
-  }
-};
-
-handler.help = ['instagram'];
-handler.tags = ['downloader'];
-handler.command = /^(instagram|igdl|ig|insta)$/i;
-
-export default handler;
-
+let handler = async (m, { conn, args, command }) => {
+    if (!args[0]) throw `هاذا الأمر خاص بتنزيل من انستجرام \n\n ex: .ighttps://www.instagram.com/reel/C1JfJlfq-_n/?igsh=MW95cTlxMGwwY29vag==`
+	await m.reply('wait')
+	try {
+	let res = await savefrom(args[0]).catch(_ => null)
+	//if (!res) throw 'Error 404 Not Found'
+	await conn.sendMessage(m.chat, { video: { url: res?.url?.[0]?.url }, caption: res?.meta?.title || '' }, { quoted: m })
+	await apivisit
+	} catch {
+	try {
+	let api = (await axios.get(API("can", "/api/download/instagram", { url: args[0] } ))).data
+	let slide = api.result
+    for (let x = 0; x < slide.length; x++) {
+		conn.sendFile(m.chat, api.result[x].url, '', 'تابع صاحب البوت فى إنستجرام \n https://www.instagram.com/ovmar_1, m)
+	}
+	await apivisit
+	} catch (e) {
+		console.log(e)
+		m.reply(`Terjadi kesalahan.`)
+	}
+} }
+handler.help = ['instagram'].map(v => v + ' <url>')
+handler.tags = ['downloader']
+handler.alias = ['ig', 'igdl', 'instagram', 'instagramdl']
+handler.command = /^(ig(dl)?|instagram(dl)?)$/i
+export default handler
