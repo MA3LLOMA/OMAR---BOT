@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     const promptText = args.slice(1).join(' ');
 
     try {
-        let mess = await m.reply('> جاري انشاء الصورة... \n لما لاتنظم الى مجموعتنا على واتساب ❤️ https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ');
+        let mess = await m.reply('> جاري انشاء الصورة.. \n *تابع صانع البوت في إنستجرام❤️* \nhttps://www.instagram.com/ovmar_1');
         m.react('🖌');
 
         const endpoint = `https://aemt.me/${apiVersion}/text2img?text=${encodeURIComponent(promptText)}`;
@@ -31,7 +31,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
             m.react('😕');
         }
     } catch {
-        throw '> Oops! Something went wrong while generating toon image. Please try again later.';
+        throw '> حدث خطأ في إنشاء الصورة حاول مرة اخرى...';
         m.react('😕');
     }
 };
