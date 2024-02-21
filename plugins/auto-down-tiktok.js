@@ -11,7 +11,7 @@ import ora from 'ora';
 import chalk from 'chalk';
 import {
     TiktokJs
-} from "../../lib/download/tiktok-js.js";
+} from "../../lib/tiktok-js.js";
 const tikTokDownloader = new TiktokJs();
 
 export async function before(m) {
