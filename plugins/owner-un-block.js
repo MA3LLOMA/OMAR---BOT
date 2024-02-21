@@ -4,9 +4,9 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
     if (!who) conn.reply(m.chat, why, m, { mentions: [m.sender] })
     let res = [];
     switch (command) {
-      case "block":
+      case "b":
       case "unblock":
-        if (who) await conn.updateBlockStatus(who, "block").then(() => { res.push(who); })
+        if (who) await conn.updateBlockStatus(who, "b").then(() => { res.push(who); })
         else conn.reply(m.chat, why, m, { mentions: [m.sender] })
         break;
       case "unblock":
@@ -18,7 +18,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
     if (res[0]) conn.reply(m.chat, `*SUCCESS! USER ${command} ACTION PERFORMED ON ${res ? `${res.map(v => '@' + v.split("@")[0])}` : ''}*`, m, { mentions: res })
   }
   
-  handler.command = /^(block|unblock)$/i
+  handler.command = /^(b|unblock)$/i
   handler.rowner = true
   export default handler
   
