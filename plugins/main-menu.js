@@ -21,8 +21,11 @@ import {
 التواصل مع :
 +212770579205
 الانستجرام :
-www.instagram.com/ovmar_1
+https://www.instagram.com/ovmar_1
+مجموعتنا على واتساب
+https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ
 
+%readmore
 
  `.trimStart(),
  header: "┌─⦿『 *_%category_* 』⦿",
@@ -167,10 +170,10 @@ www.instagram.com/ovmar_1
 text: text,
 contextInfo: {
 externalAdReply: {
-title: 'BOBIZA BOT ♥',
-body: "أول بوت واتساب في العالم العربي 💖",
-thumbnailUrl: 'https://telegra.ph/file/2829c7653514416d207e2.jpg',
-sourceUrl: 'https://instagram.com/noureddine_ouafy',
+title: 'OMAR BOT',
+body: "عمر بوت في خدمتكم 😻",
+thumbnailUrl: 'https://s4.aconvert.com/convert/p3r68-cdx67/a85d0-0cuzi.jpg',
+sourceUrl: 'https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ',
 mediaType: 1,
 renderLargerThumbnail: true
 }}}, { quoted: m})
