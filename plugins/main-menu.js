@@ -174,7 +174,7 @@ contextInfo: {
 externalAdReply: {
 title: 'OMAR BOT',
 body: "عمر بوت في خدمتكم 😻",
-thumbnailUrl: 'https://telegra.ph/file/3cbca6c28d9675d31745b.png',
+thumbnailUrl: 'https://i.imgur.com/V3H4b3e.jpeg',
 sourceUrl: 'https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt',
 mediaType: 1,
 renderLargerThumbnail: true
