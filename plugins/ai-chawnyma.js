@@ -7,7 +7,7 @@ let handler = async (m, {
     text,
     command
 }) => {
-    if (!text) return m.reply("Input query\nExample: .chawnyma hello")
+    if (!text) return m.reply("قم بكتابة السؤال للذكاء الإصطناعي \nExample: .مرحبا عمر كيف حالك")
     await m.reply(wait);
     try {
         const result = await fetchCompletion(text);
@@ -17,9 +17,9 @@ let handler = async (m, {
     }
 
 }
-handler.help = ["chawnyma"]
+handler.help = ["ai3"]
 handler.tags = ["ai"];
-handler.command = /^(chawnyma)$/i
+handler.command = /^(gpt3 | ai3 | openai3)$/i
 export default handler
 
 async function fetchCompletion(inputValue) {
@@ -35,7 +35,7 @@ async function fetchCompletion(inputValue) {
                 model: "gpt-3.5-turbo",
                 messages: [{
                     role: "system",
-                    content: "Kamu adalah AI."
+                    content: "حدث خطأ."
                 }, {
                     role: "user",
                     content: inputValue
