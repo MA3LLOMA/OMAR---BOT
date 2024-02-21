@@ -16,7 +16,7 @@ import {
  const defaultMenu = {
   before: `
   - السلام عليكم
-  مرحبا بكم في البوت يمكنك طلب ماتريد وماتحتاج في وقت لاتنسو دعمنا على 👇🏻
+  مرحبا بكم في البوت يمكنك طلب ماتريد وماتحتاج في وقت لاتنسو دعمنا على
 
 التواصل مع :
 +212770579205
@@ -172,7 +172,7 @@ contextInfo: {
 externalAdReply: {
 title: 'OMAR BOT',
 body: "عمر بوت في خدمتكم 😻",
-thumbnailUrl: 'https://s4.aconvert.com/convert/p3r68-cdx67/a5xhr-x4rh3.jpg',
+thumbnailUrl: 'https://i.imgur.com/mFIzdzq.jpeg',
 sourceUrl: 'https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ',
 mediaType: 1,
 renderLargerThumbnail: true
