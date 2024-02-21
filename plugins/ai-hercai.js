@@ -1,4 +1,4 @@
-const Hercai = await (await import("../../lib/hercai.js")).default;
+const Hercai = await (await import("../lib/hercai.js")).default;
 const client = new Hercai();
 
 let handler = async (m, {
