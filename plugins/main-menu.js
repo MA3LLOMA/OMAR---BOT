@@ -16,7 +16,7 @@ import {
  const defaultMenu = {
   before: `
   - السلام عليكم
-  مرحبا بكم في البوت يمكنك طلب ماتريد وماتحتاج في وقت لاتنسو دعمنا على
+  _*مرحبا بكم في البوت يمكنك طلب ماتريد وماتحتاج في أي وقت لاتنسو دعمنا على*_
 
 التواصل مع :
 +212770579205
@@ -24,6 +24,8 @@ import {
 https://www.instagram.com/ovmar_1
 مجموعتنا على واتساب
 https://chat.whatsapp.com/LCFDLxeCOopBaJZcMLlPEQ
+
+
 
 %readmore
 
