@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, usedPrefix, args, command, text }) => {
-  if (!text) throw `You need to give the URL of Any Instagram video, post, reel, image`;
+  if (!text) throw `هاذا الأكر متخصص في تحميل من إنستجرام \n\n ex:  .ighttps://www.instagram.com/reel/C1JfJlfq-_n/?igsh=MW95cTlxMGwwY29vag==`;
   m.reply(wait);
 
   let res;
@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, args, command, text }) => {
   let api_response = await res.json();
 
   if (!api_response || !api_response.data) {
-    throw `No video or image found or Invalid response from API.`;
+    throw `لم يتم إيجاد أي فيديو أو صورة في الرابط..`;
   }
 
   const mediaArray = api_response.data;
@@ -23,7 +23,7 @@ let handler = async (m, { conn, usedPrefix, args, command, text }) => {
     const mediaType = mediaData.type;
     const mediaURL = mediaData.url_download;
 
-    let cap = `HERE IS THE ${mediaType.toUpperCase()} >,<`;
+    let cap = `تابع صاحب البوت فى إنستجرام \n \n https://www.instagram.com/ovmar_1`;
 
     if (mediaType === 'video') {
       
