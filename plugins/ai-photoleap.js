@@ -28,7 +28,7 @@ let handler = async (m, {
     }
 }
 handler.help = ["photoleap"]
-handler.tags = ["ai"];
+handler.tags = ["dalle"];
 handler.command = /^(photoleap)$/i
 
 export default handler
