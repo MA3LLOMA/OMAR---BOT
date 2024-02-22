@@ -8,14 +8,14 @@ const handler = async function (m, { conn }) {
             const url = args[0];
             let res = await (await fetch(`https://api.lolhuman.xyz/api/instagram?apikey=GataDios&url=${url}`)).json(); 
 
-            if (!res.result || res.result.length === 1) throw "لا يمكن العثور على الفيديو في الرابط";
-            conn.sendFile(m.chat, res.result[1], '', '*تابع صاحب البوت في الإنستجرام ❤️* \n https://www.instagram.com/ovmar_1', m);
+            if (!res.result || res.result.length === 0) throw "لا يمكن العثور على الفيديو في الرابط";
+            conn.sendFile(m.chat, res.result[0], '', '*تابع صاحب البوت في الإنستجرام ❤️* \n https://www.instagram.com/ovmar_1', m);
 
             for (let imgs of res.result) {   
                 let ban = m.mentionedJid[0] || m.sender || conn.parseMention(args[0]) || (args[0].replace(/[@.+-]/g, '').replace(' ', '') + '@s.whatsapp.net') || '';
 
                 if (ban) {
-                    conn.sendFile(m.chat, imgs, '', null);
+                    conn.sendFile(m.chat, imgs, m, null);
                 }
             }
         }
