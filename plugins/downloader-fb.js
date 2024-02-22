@@ -29,8 +29,8 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
   }
 }
 
-handler.help = ['facebook <url>']
+handler.help = ['facebook2 <url>']
 handler.tags = ['downloader']
-handler.command = /^((facebook|fb)(downloder|dl)?)$/i
+handler.command = /^((facebook2|fb2)(downloder|dl2)?)$/i
 
 export default handler
