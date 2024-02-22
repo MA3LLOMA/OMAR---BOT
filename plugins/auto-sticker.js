@@ -1,61 +1,25 @@
-const { sticker } = require('../lib/sticker')
-const WSF = require('wa-sticker-formatter')
-let handler = m => m
+var {
+	sticker
+} = require('../lib/sticker.js');
+var handler = m => m
+handler.all = async function(m) {
+	var chat = db.data.chats[m.chat]
+	var user = db.data.users[m.sender]
 
-handler.before = async function (m) {
-    let chat = global.db.data.chats[m.chat]
-    let user = global.db.data.users[m.sender]
-    if (chat.stiker && !user.banned && !chat.isBanned && !m.fromMe && !m.isBaileys) {
-        // try {
-        let q = m
-        let stiker = false
-        let wsf = false
-        let mime = (q.msg || q).mimetype || ''
-        if (/webp/.test(mime)) return
-        if (/image/.test(mime)) {
-            let img = await q.download()
-            if (!img) return
-            wsf = new WSF.Sticker(img, {
-                pack: global.packname,
-                author: global.author,
-                crop: false,
-            })
-        } else if (/video/.test(mime)) {
-            if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
-            let img = await q.download()
-            if (!img) return
-            wsf = new WSF.Sticker(img, {
-                pack: global.packname,
-                author: global.author,
-                crop: false,
-            })
-        } else if (m.text.split` `[0]) {
-            if (isUrl(m.text.split` `[0])) stiker = await sticker(false, m.text.split` `[0], global.packname, global.author)
-            else return
-        }
-        if (wsf) {
-            await wsf.build()
-            const sticBuffer = await wsf.get()
-            if (sticBuffer) await this.sendMessage(m.chat, { sticker: sticBuffer }, {
-                quoted: m,
-                mimetype: 'image/webp',
-                ephemeralExpiration: 86400
-            })
-        }
-        if (stiker) await this.sendMessage(m.chat, { sticker: stiker }, {
-                quoted: m,
-                mimetype: 'image/webp',
-                ephemeralExpiration: 86400
-            })
-        // } finally {
-        //     if (stiker) {
-        //     }
-        // }
-    }
-    return true
+	if (chat.stiker && !chat.isBanned && !user.banned && !m.isBaileys) {
+		var q = m
+		var stiker = false
+		var mime = (q.msg || q).mimetype || ''
+		if (/webp/.test(mime)) return
+		if (/image/.test(mime)) {
+			var img = await q.download()
+			if (!img) return
+			stiker = await sticker(img, false, packname, author)
+		}
+		if (stiker) {
+			await this.sendFile(m.chat, stiker, '', '', m)
+		}
+	}
+	return !0
 }
 module.exports = handler
-
-const isUrl = (text) => {
-    return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
-}
