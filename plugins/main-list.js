@@ -31,7 +31,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃  Xlicon 𝘽𝙊𝙏 𝙈𝙀𝙉𝙐  
-╰───Xlicon─────────⍟   
+╰───OMAR BOT─────────⍟   
 
 ┏━━━ʕ•㉨•ʔ━━━
 ┃➣🗂️ _${usedPrefix}gita_
@@ -53,7 +53,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃ Xlicon 𝙊𝙒𝙉𝙀𝙍 𝙈𝙀𝙉𝙐  
-╰───Xlicon─────────⍟
+╰───OMAR BOT─────────⍟
 
 ┏━━━ʕ•㉨•ʔ━━━┓
 ┃➣📁 _${usedPrefix}banchat_
@@ -74,7 +74,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃ Xlicon 𝙂𝙍𝙊𝙐𝙋 𝙈𝙀𝙉𝙐 
-╰───Xlicon─────────⍟
+╰───OMAR BOT─────────⍟
 
 ┏━━━ʕ•㉨•ʔ━━━┓🤖
 ┃➣👾_${usedPrefix}kick *<@tag>*_
@@ -100,7 +100,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃ Xlicon 𝘿𝙇📱 𝙈𝙀𝙉𝙐 
-╰───Xlicon─────────⍟
+╰───OMAR BOT─────────⍟
 
 ┏━━━ʕ•㉨•ʔ━━━┓
 ┃➣📡 _${usedPrefix}play_
@@ -126,7 +126,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃Xlicon 𝙀𝘾𝙊𝙉𝙊𝙈𝙔 
-╰───Xlicon─────────⍟
+╰───OMAR BOT─────────⍟
 
 ┏━━━ʕ•㉨•ʔ━━━┓
 ┃➣👑 _${usedPrefix}claim/daily_
@@ -152,7 +152,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃ Xlicon 𝙁𝙐𝙉 𝙈𝙀𝙉𝙐
-╰───Xlicon─────────⍟
+╰───OMAR BOT─────────⍟
 
 ┏━━━ʕ•㉨•ʔ━━━┓
 ┃➣👻 _${usedPrefix}character_
@@ -174,7 +174,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃ Xlicon 𝐴𝑁𝐼𝑀𝐸 𝑀𝐸𝑁𝑈
-╰───Xlicon─────────⍟
+╰───OMAR BOT─────────⍟
 
 ┏━━━ʕ•㉨•ʔ━━━┓
 ┃➣❄️ _${usedPrefix}waifu_
@@ -220,7 +220,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃ Xlicon 𝙂𝘼𝙈𝙀 𝙈𝙀𝙉𝙐 
-╰───Xlicon─────────⍟
+╰───OMAR BOT─────────⍟
 
 ┏━━━ʕ•㉨•ʔ━━━┓
 ┃➣🎮 _${usedPrefix}tictactoe_
@@ -238,7 +238,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃ Xlicon 𝙎𝙏𝙄𝘾𝙆𝙀𝙍 𝙈𝙀𝙉𝙐
-╰───Xlicon─────────⍟
+╰───OMAR BOT─────────⍟
 
 ┏━━━ʕ•㉨•ʔ━━━┓
 ┃➣👾 _${usedPrefix}sticker_
@@ -306,7 +306,7 @@ break;
 ┃⬡▸ .pokedex <pokemon>
 ┃⬡▸ .trace
 >-----------------------<
-┃ -MADE BY XLICON -TEAM
+┃ -MADE BY OMAR-
 >-----------------------<
 ╰─────────────────⦿
 `; 
@@ -319,7 +319,7 @@ break;
           lkr = `
 ╭─────────────────⍟
 ┃ Xlicon 𝙏𝙊𝙊𝙇𝙎 𝙈𝙀𝙉𝙐
-╰───Xlicon─────────⍟
+╰───OMAR BOT─────────⍟
 
 ┏━━━ʕ•㉨•ʔ━━━┓
 ┃➣🧰 _${usedPrefix}autosticker_
