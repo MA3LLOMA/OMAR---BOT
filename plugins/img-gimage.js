@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   const numberOfImages = match ? parseInt(match[1]) : 1;
 
   try {
-    m.reply('*Please wait*');
+    m.reply('wait');
 
     const images = [];
 
