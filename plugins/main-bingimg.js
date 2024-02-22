@@ -12,7 +12,7 @@ let handler = async (m, { conn, text }) => {
     m.react(done)
 }
 
-handler.help = ['bingimg <query>']
+handler.help = ['bingimg1 <query>']
 handler.tags = ['ai']
 handler.command = /^bingimg1$/i
 
