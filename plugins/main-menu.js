@@ -174,7 +174,7 @@ https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt
    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, "g"), (_, name) => "" + replace[name])
    const pp = './Assets/XLICON-V2.jpg'
 
-    conn.sendMessage(m.chat, {audio: { url: 'https://a.uguu.se/NyOBvBWz.mp3' }, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+    conn.sendMessage(m.chat, {audio: { url: 'https://files.catbox.moe/5h3ra5.mp3' }, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
  conn.sendMessage(m.chat, {
 text: text,
 contextInfo: {
