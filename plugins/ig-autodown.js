@@ -4,7 +4,7 @@ const handler = async function (m, { conn }) {
     const args = m.text.split(' ');
     try {
         if (args.length > 0) {
-            m.reply("wait");
+            m.reply(wait);
             const url = args[0];
             let res = await (await fetch(`https://api.lolhuman.xyz/api/instagram?apikey=GataDios&url=${url}`)).json(); 
 
