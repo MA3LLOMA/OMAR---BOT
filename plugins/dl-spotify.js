@@ -3,11 +3,11 @@ import displayLoadingScreen from '../lib/loading.js';
 let handler = async (m, { conn, text }) => {
     if (!text) {
         console.log('No song name provided.');
-        throw `*قم باإرسال إسم الأغنية التي تريد* \n\n *مثال: .song Lmorphine*`;
+        throw `*قم باإرسال إسم الأغنية التي تريد* \n\n *example \n : .song diib *`;
     }
   m.react('🎶')
   await displayLoadingScreen(conn, m.chat);
-  let pp = 'https://i.imgur.com/gzV8Pnk.jpg'
+  let pp = 'https://i.imgur.com/HPP6M9C.jpeg'
     const query = encodeURIComponent(text);
     let res = `https://guruapi.tech/api/spotifydl?url=${query}`
    // let spotify = await (await fetch(res)).buffer()
@@ -23,12 +23,12 @@ let handler = async (m, { conn, text }) => {
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-            title: "MOROCCAN BOT",
+            title: "OMAR BOT",
             body: `تستمع إلى: ${text}`,
             thumbnailUrl: pp,
             sourceUrl: null,
             mediaType: 1,
-            renderLargerThumbnail: false
+            renderLargerThumbnail: true
           }
         }
     };
