@@ -76,9 +76,9 @@ const handler = async (m, {
     }
 };
 
-handler.help = ["bingimg3 *[query]*"];
+handler.help = ["bingimg *[query]*"];
 handler.tags = ["ai"];
-handler.command = /^(bingimg3)$/i;
+handler.command = /^(bingimg)$/i;
 export default handler;
 
 async function AemtBingImg(query) {
