@@ -26,7 +26,7 @@ let handler = async (m, { conn, text }) => {
             title: "OMAR BOT",
             body: `تستمع إلى: ${text}`,
             thumbnailUrl: pp,
-            sourceUrl: null,
+            sourceUrl: "https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt",
             mediaType: 1,
             renderLargerThumbnail: true
           }
