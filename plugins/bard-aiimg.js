@@ -19,7 +19,7 @@ conn.sendMessage(m.chat, { text: json.result }, { quoted: m })
   
 }
 handler.help = ['bardimg']
-handler.tags = ['herramientas']
+handler.tags = ['dalle']
 handler.command = /^(bardimg|bardimage)$/i
 
 handler.limit = true
