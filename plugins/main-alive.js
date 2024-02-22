@@ -16,15 +16,15 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
         mimetype: 'audio/mp4',
         ptt: true,
         waveform:  [100, 0, 100, 0, 100, 0, 100],
-        fileName: "Guru",
+        fileName: "OMAR",
     
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "THE XLICON-V2 IS ALIVE 🌟",
-          body: "XLICON BOT",
-          thumbnailUrl: img,
-          sourceUrl: 'https://chat.whatsapp.com/C4ivwZKuh5bLJkqfYNPQsk',
+          title: "البوت يعمل قم بطلب أي شئ🌟",
+          body: "OMAR BOT",
+          thumbnailUrl: "https://i.imgur.com/HPP6M9C.jpeg",
+          sourceUrl: 'https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt',
           mediaType: 1,
           renderLargerThumbnail: true
           }}
@@ -36,6 +36,6 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
     
     handler.help = ['alive']
     handler.tags = ['main']
-    handler.command = /^(alive)$/i 
+    handler.command = /^(alive|omar|)$/i 
 
     export default handler;
