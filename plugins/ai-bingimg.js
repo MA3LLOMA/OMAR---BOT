@@ -16,7 +16,7 @@ const handler = async (m, {
     } else if (m.quoted && m.quoted.text) {
         text = m.quoted.text;
     } else {
-        throw 'Input teks atau reply teks!';
+        throw 'هاذا الأمر خاص باإنشاء الصور. .';
     }
 
     await m.reply(wait);
