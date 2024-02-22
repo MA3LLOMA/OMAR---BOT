@@ -17,11 +17,11 @@ let handler = async (m, { conn }) => {
     let newsItem = articles[randomArticleIndex];
 
     let newsInfo = `•───── ୨❀୧ ─────•
-    ❖ 𝑺𝑻𝑨𝑻𝑼𝑺: Active
-    ㋡ 𝑪𝑹𝑬𝑨𝑻𝑶𝑹: XLICON-TEAM
-    ☞ 𝑯𝑬𝑨𝑫𝑳𝑰𝑵𝑬: ${newsItem.headline}
+    ❖ القصة: Active
+    ㋡ المصمم: OMAR BOT
+    ☞ العنوان: ${newsItem.headline}
     ${newsItem.description}
-    🔗 𝑹𝑬𝑨𝑫 𝑴𝑶𝑹𝑬: ${newsItem.url}
+    🔗 عرض المزيد: ${newsItem.url}
     •───── ୨❀୧ ─────•`;
 
     let thumbnail = 'https://yt3.ggpht.com/-L8AxmJwZuy8/AAAAAAAAAAI/AAAAAAAAAAA/eZRzS7tRVX0/s900-c-k-no/photo.jpg'; 
