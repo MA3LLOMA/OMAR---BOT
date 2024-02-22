@@ -77,7 +77,7 @@ const handler = async (m, {
 };
 
 handler.help = ["bingimg *[query]*"];
-handler.tags = ["ai"];
+handler.tags = ["dalle"];
 handler.command = /^(bingimg)$/i;
 export default handler;
 
