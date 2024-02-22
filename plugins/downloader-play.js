@@ -14,7 +14,7 @@ let handler = async (m, {
     usedPrefix
 }) => {
     if (!text) throw `Use example *${usedPrefix + command}* Somewhere Only We Know`
-    const combinedRegex = /^(play2|song2)$/i;
+    const combinedRegex = /^(play4|song)$/i;
     const isMP3 = combinedRegex.test(command);
 
     try {
@@ -51,7 +51,7 @@ let handler = async (m, {
                         containsAutoReply: true,
                         mediaType: 1,
                         mediaUrl: url,
-                        renderLargerThumbnail: 'https://i.imgur.com/mFIzdzq.jpeg',
+                        renderLargerThumbnail: ,
                         showAdAttribution: true,
                         sourceId: "lua ser ofc",
                         sourceType: "PDF",
@@ -133,9 +133,9 @@ let handler = async (m, {
         await m.reply(eror)
     }
 }
-handler.help = ["play2"].map(v => v + " <search>")
+handler.help = ["play4"].map(v => v + " <search>")
 handler.tags = ["downloader"]
-handler.command = /^(play2|song2)$/i
+handler.command = /^(play4|song)$/i
 
 export default handler
 
