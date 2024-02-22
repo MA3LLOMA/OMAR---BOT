@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) throw `*This command generates images from text prompts*\n\n*𝙴xample usage*\n*◉ ${usedPrefix + command} Beautiful anime girl*\n*◉ ${usedPrefix + command} Elon Musk in pink output*`;
 
   try {
-    let imsg = conn.sendMessage(m.chat, {text: 'please wait , while i do some magic'}, { quoted: m });
+    let imsg = conn.sendMessage(m.chat, {'wait'}, { quoted: m });
 
     const endpoint = `https://vihangayt.me/tools/lexicaart?q=${encodeURIComponent(text)}`;
     const response = await fetch(endpoint);
