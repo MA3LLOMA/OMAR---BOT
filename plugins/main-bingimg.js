@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text }) => {
-    if (!text) throw 'هاذا الأمر خاص ياإنشاء الصور. .?'
+    if (!text) throw 'هاذا الأمر خاص باإنشاء الصور. .?'
     m.react(rwait)
     let msg = encodeURIComponent(text)
     let res = await fetch(`https://aemt.me/bingimg?text=${msg}`)
