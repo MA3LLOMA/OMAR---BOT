@@ -1,36 +1,24 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `*هاذا الأمر مخصص بالتنزيل من موقع aptoide \n \n شرح التنزيل \n .apkdl whatsapp \n .apkdl facebook lite \n`;
-
-  try {
-    const apkId = encodeURIComponent(args.join(' '));
-    const response = await fetch(`wait`);
-    const data = await response.json();
-
-    if (data.status) {
-      const apkData = data.data;
-      const message = `
-*معلومات التنزيل*
-إسم التطبيق: ${apkData.name}
-أخر تحديث: ${apkData.lastup}
-الحزمة: ${apkData.package}
-الحجم: ${apkData.size}
-صورة التطبيق: ${apkData.icon}
-رابط التنزيل: ${apkData.dllink}
-      `;
-      await conn.sendFile(m.chat, apkData.dllink, `${apkData.name}.apk`, message, m);
-    } else {
-      conn.reply(m.chat, 'أعتذر', m);
-    }
-  } catch (error) {
-    console.error(error);
-    conn.reply(m.chat, 'هنا مشكلة في الإرسال. أعتذر', m);
-  }
+let handler = async (m, { conn, usedPrefix, command, args }) => {
+  if (!args[0])
+    throw `Ex: ${
+      usedPrefix + command
+    } https://play.google.com/store/apps/details?id=com.linecorp.LGGRTHN`;
+  let res = await fetch(
+    `https://api.lolhuman.xyz/api/apkdownloader?apikey=${global.lolkey}&package=${args[0]}`
+  );
+  let f = await res.json();
+  let { apk_name, apk_icon, apk_version, apk_author, apk_link } = f.result;
+  let apkk = `Name : ${apk_name}
+Version : ${apk_version}
+Author : ${apk_author}
+`;
+  await conn.sendFile(m.chat, apk_icon, "apk.jpg", apkk, m);
+  await conn.sendFile(m.chat, apk_link, "apk.zip", apk_name, m);
 };
-
-handler.help = ['apkdl']
-handler.tags = ['downloader']
-handler.command = /^(apkdl|downloadapk|apkdownload)$/i
-
+handler.help = ["apkdl"];
+handler.tags = ["downloader"];
+handler.command = /^(apkdl)$/i;
+handler.limit = true;
 export default handler;
