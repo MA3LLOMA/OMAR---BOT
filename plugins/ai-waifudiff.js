@@ -20,7 +20,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 }
 
 handler.help = ['animediff2 <prompt>']
-handler.tags = ['ai']
+handler.tags = ['dalle']
 handler.command = /^(animediff2)$/i
 
 handler.premium = false
