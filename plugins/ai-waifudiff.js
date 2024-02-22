@@ -10,7 +10,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     try {
         let url = `https://aemt.me/v5/text2img?text=${text}`
 
-        await conn.sendFile(m.chat, await (await fetch(url)).buffer(), 'fubuki.jpg', wm, m)
+        await conn.sendFile(m.chat, await (await fetch(url)).buffer(), 'fubuki.jpg', '*تابع صاحب البوت في الإنستجرام ❤️* \n https://www.instagram.com/ovmar_1', m)
         m.react(done)
 
     } catch (e) {
@@ -19,9 +19,9 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 }
 
-handler.help = ['animediff2 <prompt>']
+handler.help = ['animediff <prompt>']
 handler.tags = ['dalle']
-handler.command = /^(animediff2)$/i
+handler.command = /^(animediff)$/i
 
 handler.premium = false
 handler.limit = 2
