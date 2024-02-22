@@ -1,4 +1,4 @@
-by https://github.com/DIEGO-OFC/DORRAT-BOT-MD
+//by https://github.com/DIEGO-OFC/DORRAT-BOT-MD
  
 let handler = async (m, {conn, text, usedPrefix, command}) => {
   if (!text) return conn.reply(m.chat, "Ingrese la consulta", m);
