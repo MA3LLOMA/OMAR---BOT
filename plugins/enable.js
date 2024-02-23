@@ -1,4 +1,4 @@
-//import db from '../lib/database.js'
+import db from '../lib/database.js'
 
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
 	
@@ -260,7 +260,7 @@ m.reply(`
 
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
-handler.tags = ['config']
+handler.tags = ['owner']
 handler.command = /^((en|dis)able|(turn)?o(n|ff)|[01])$/i
 
 export default handler
