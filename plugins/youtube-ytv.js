@@ -26,7 +26,6 @@ let handler = async (m, {
         if ((item.contentLength).split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader V1*\n\n*⚖️Size* : ${item.contentLength}\n*🎞️Quality* : ${item.quality}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(item.videoUrl)}`)
         let captvid = `🔍 *[ الفيديو الخاص بك ]*
 
-//📷 *Image URL:* ${item.thumb.url || 'Tidak diketahui'}
 📚 *Title:* ${item.title || 'Tidak diketahui'}
 📅 *Date:* ${item.date || 'Tidak diketahui'}
 ⏱️ *Duration:* ${item.duration || 'Tidak diketahui'}
