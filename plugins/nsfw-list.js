@@ -22,7 +22,7 @@ m.react(rwait)
   };
   
   handler.help = ['nsfw'];
-  handler.tags = ['nsfw'];
+  handler.tags = ['tools'];
   handler.command = ['nsfw'];
   handler.group = true
   handler.register = true;
