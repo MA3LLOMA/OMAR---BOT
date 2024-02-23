@@ -15,7 +15,7 @@ let handler = async (m, {
 }
 
 handler.help = ['aitoonme']
-handler.tags = ['darwing']
+handler.tags = ['drawing']
 handler.command = /^(aitoonme|tnm)$/i
 handler.limit = true
 
