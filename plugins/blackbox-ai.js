@@ -14,7 +14,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 
     let res = {};
     try {
-      await m.reply("wait");
+      await m.reply(wait);
       res = await axios.get(apiEndpoint);
     } catch (e) {
       console.error(e);
