@@ -21,6 +21,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 };
 
 handler.help = ['dalle'];
-handler.tags = ['dalle'];
+handler.tags = ['drawing'];
 handler.command = ['dalle'];
 export default handler;
