@@ -112,7 +112,7 @@ let handler = async (m, {
 }
 handler.help = ["ytv"]
 handler.tags = ["downloader"]
-handler.command = /^y(outube(mp4|vdl)|t((mp4|v)|vdl))$/i
+handler.command = /^(ytv))$/i
 
 handler.exp = 0
 handler.register = false
