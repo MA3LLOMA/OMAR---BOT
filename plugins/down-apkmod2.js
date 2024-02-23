@@ -7,7 +7,7 @@ let handler = async (m, { text, usedPrefix, command, conn }) => {
         title: global.wm,
         body: "Simple Bot Esm",
         sourceUrl: "https://www.instagram.com/ovmar_1",
-        thumbnail: fs.readFileSync("../media/thumbnail.jpg"),
+        thumbnail: fs.readFileSync("./thumbnail.jpg"),
       },
     },
   };
