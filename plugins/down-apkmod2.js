@@ -6,7 +6,7 @@ let handler = async (m, { text, usedPrefix, command, conn }) => {
       externalAdReply: {
         title: global.wm,
         body: "Simple Bot Esm",
-        sourceUrl: sgc,
+        sourceUrl: "https://www.instagram.com/ovmar_1",
         thumbnail: fs.readFileSync("../media/thumbnail.jpg"),
       },
     },
