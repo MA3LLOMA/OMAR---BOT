@@ -27,7 +27,7 @@ let handler = async (m, {
         let captvid = ` الفيديو الخاص بك 
 
 📚 *العنوان:* ${item.title || 'Tidak diketahui'}
-📅 *تاريخ الفيديو:* ${item.date || 'Tidak diketahui'}
+📅 *التاريخ:* ${item.date || 'Tidak diketahui'}
 📺 *القناة:* ${item.channel || 'Tidak diketahui'}
 🔒 *الجودة:* ${item.quality || 'Tidak diketahui'}
 📝 *الوصف:* ${item.description || 'Tidak diketahui'}
@@ -46,7 +46,7 @@ let handler = async (m, {
                     mediaUrl: v,
                     title: item.title,
                     body: dls,
-                    sourceUrl: v,
+                    sourceUrl: "https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt",
                     thumbnail: await (await conn.getFile(item.image)).data
                 }
             }
