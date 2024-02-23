@@ -1,27 +1,21 @@
-import { promises } from 'fs'
-import { join } from 'path'
-import fetch from 'node-fetch'
-import { xpRange } from '../lib/levelling.js'
-//import { plugins } from '../lib/plugins.js'
-let tags = {
-  'morocco':'  ‎أوامر للمغاربة',
-  'applications':'‎ أوامر التطبيقات‎',
-  'drawing':'‎ توليد الصور‎ أوامر' ,
-  'ai':'‎ الذكاء الاصطناعي‎ أوامر',
-  'infobot':'‎ معلومات البوت‎',
-  'downloader':'‎ أوامر التحميلات',
-  'anime':'‎ أوامر عن  الأنيم',
-  'islam':'‎ الدين هو الاسلام‎',
-  'owner':'‎ اوامر صاحب البوت',
-  'search':'‎ أوامر البحث',
-  'audio-changer':'‎ تعديل الصوتيات‎',
-  'sticker':'‎ أوامر الملصقات',
-  'image-edit':'‎ تعديل الصور',
-  'pdf':'‎ pdf ومشتقاته‎',
-  'uploader':'‎‎ رفع الملفات‎',
-}
-const defaultMenu = {
-  before: `السلام عليكم 👋. 
+import {
+  promises,
+  readFileSync
+ } from "fs"
+ import {
+  join
+ } from "path"
+ import {
+  xpRange
+ } from "../lib/levelling.js"
+ import moment from "moment-timezone"
+ import os from "os"
+ import fs from "fs"
+ import fetch from "node-fetch"
+
+ const defaultMenu = {
+  before: `*السلام عليكم 👋🏽*
+
 ┌─────────────────⦿
 
 ﴿كلّ مَنْ عَلَيْهَا فَانٍ * وَيَبْقَى وَجْه رَبِّكَ ذو الْجَلَالِ وَالْإِكْرَامِ﴾
@@ -123,68 +117,118 @@ const defaultMenu = {
    let _text = [
  before,
  ...Object.keys(tags).map(tag => {
-  return header.replace(/%category/g, tags[tag]) + '\n' + [
-            ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
-                return menu.help.map(help => {
-                    return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                        .replace(/%islimit/g, menu.limit ? '(Ⓛ)' : '')
-                        .replace(/%isPremium/g, menu.premium ? '(Ⓟ)' : '')
-                        .trim()
-                }).join('\n')
-            }),
-            footer
-        ].join('\n')
-    }),
-    after
-].join('\n')
-text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
-    let replace = {
-      '%': '%',
-      p: _p, uptime, muptime,
-      me: conn.getName(conn.user.jid),
-      npmname: package.name,
-      npmdesc: package.description,
-      version: package.version,
-      exp: exp - min,
-      maxexp: xp,
-      totalexp: exp,
-      xp4levelup: max - exp,
-      github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role
-    }
-    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-  conn.relayMessage(m.chat, {
-  extendedTextMessage:{
-                text: text, 
-                contextInfo: {
-                mentionedJid: [m.sender],
-                     externalAdReply: {
-                        title: date,
-                        mediaType: 1,
-                        previewType: 0,
-                        renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://telegra.ph/file/3a34bfa58714bdef500d9.jpg',
-                        sourceUrl: 'https://whatsapp.com/channel/0029VaApYsQ5Ui2c2rKbpP0S'
-                    }
-                }, mentions: [m.sender]
-}}, {})
+  return header.replace(/%category/g, tags[tag]) + "\n" + [
+   ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
+ return menu.help.map(help => {
+  return body.replace(/%cmd/g, menu.prefix ? help : "%_p" + help)
+   .replace(/%islimit/g, menu.limit ? "Ⓛ" : "")
+   .replace(/%isPremium/g, menu.premium ? "🅟" : "")
+   .trim()
+ }).join("\n")
+   }),
+   footer
+  ].join("\n")
+ }),
+ after
+   ].join("\n")
+   let text = typeof conn.menu == "string" ? conn.menu : typeof conn.menu == "object" ? _text : ""
+   let replace = {
+ "%": "%",
+ p: _p,
+ uptime,
+ muptime,
+ me: conn.getName(conn.user.jid),
+ npmname: _package.name,
+ npmdesc: _package.description,
+ version: _package.version,
+ exp: exp - min,
+ maxexp: xp,
+ totalexp: exp,
+ xp4levelup: max - exp,
+ github: _package.homepage ? _package.homepage.url || _package.homepage : "[unknown github url]",
+ tag,
+ ucpn,
+ platform,
+ mode,
+ _p,
+ credit,
+ age,
+ tag,
+ name,
+ prems,
+ level,
+ limit,
+ name,
+ totalreg,
+ totalfeatures,
+ role,
+ readmore: readMore
+   }
+   text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, "g"), (_, name) => "" + replace[name])
+   const pp = './Assets/XLICON-V2.jpg'
+
+    conn.sendMessage(m.chat, {audio: { url: 'https://files.catbox.moe/5h3ra5.mp3' }, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+ conn.sendMessage(m.chat, {
+text: text,
+contextInfo: {
+externalAdReply: {
+title: 'OMAR BOT',
+body: "عمر بوت في خدمتكم 😻",
+thumbnailUrl: 'https://i.imgur.com/V3H4b3e.jpeg',
+sourceUrl: 'https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt',
+mediaType: 1,
+renderLargerThumbnail: true
+}}}, { quoted: m})
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
-    throw e
+   await conn.reply(m.chat, " error", m)
+   throw e
   }
-}
-handler.help = ['menu']
-handler.tags = ['main']
-handler.command = /^(allmenu|menu|help|bot)$/i
+ }
+ handler.command = /^(menu|help|omar|list|list2|قائمة|\?)$/i
+ 
 
-handler.exp = 3
-
-module.exports = handler
-
-
-function clockString(ms) {
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
-}
+ 
+ export default handler
+ 
+ 
+ function pickRandom(list) {
+  return list[Math.floor(Math.random() * list.length)]
+ }
+ 
+ const more = String.fromCharCode(8206)
+ const readMore = more.repeat(4001)
+ 
+ function clockString(ms) {
+  let h = isNaN(ms) ? "--" : Math.floor(ms / 3600000)
+  let m = isNaN(ms) ? "--" : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? "--" : Math.floor(ms / 1000) % 60
+  return [h, " H ", m, " M ", s, " S "].map(v => v.toString().padStart(2, 0)).join("")
+ }
+ 
+ function clockStringP(ms) {
+  let ye = isNaN(ms) ? "--" : Math.floor(ms / 31104000000) % 10
+  let mo = isNaN(ms) ? "--" : Math.floor(ms / 2592000000) % 12
+  let d = isNaN(ms) ? "--" : Math.floor(ms / 86400000) % 30
+  let h = isNaN(ms) ? "--" : Math.floor(ms / 3600000) % 24
+  let m = isNaN(ms) ? "--" : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? "--" : Math.floor(ms / 1000) % 60
+  return [ye, " *Years 🗓️*\n", mo, " *Month 🌙*\n", d, " *Days ☀️*\n", h, " *Hours 🕐*\n", m, " *Minute ⏰*\n", s, " *Second ⏱️*"].map(v => v.toString().padStart(2, 0)).join("")
+ }
+ 
+ function ucapan() {
+  const time = moment.tz("Asia/Kolkata").format("HH")
+  let res = "Good morning ☀️"
+  if (time >= 4) {
+   res = "Good Morning 🌄"
+  }
+  if (time >= 10) {
+   res = "Good Afternoon ☀️"
+  }
+  if (time >= 15) {
+   res = "Good Afternoon 🌇"
+  }
+  if (time >= 18) {
+   res = "Good Night 🌙"
+  }
+  return res
+     }
