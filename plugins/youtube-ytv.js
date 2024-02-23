@@ -24,9 +24,9 @@ let handler = async (m, {
 
         let item = await ytmp4(args[0], q.split("p")[0])
         if ((item.contentLength).split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader V1*\n\n*⚖️Size* : ${item.contentLength}\n*🎞️Quality* : ${item.quality}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(item.videoUrl)}`)
-        let captvid = `🔍 *[ RESULT V1 ]*
+        let captvid = `🔍 *[ الفيديو الخاص بك ]*
 
-📷 *Image URL:* ${item.thumb.url || 'Tidak diketahui'}
+//📷 *Image URL:* ${item.thumb.url || 'Tidak diketahui'}
 📚 *Title:* ${item.title || 'Tidak diketahui'}
 📅 *Date:* ${item.date || 'Tidak diketahui'}
 ⏱️ *Duration:* ${item.duration || 'Tidak diketahui'}
@@ -111,7 +111,7 @@ let handler = async (m, {
     }
 
 }
-handler.help = ["mp4", "v", ""].map(v => "yt" + v + ` <url> <without message>`)
+handler.help = ["ytv"]
 handler.tags = ["downloader"]
 handler.command = /^y(outube(mp4|vdl)|t((mp4|v)|vdl))$/i
 
