@@ -28,7 +28,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 }
 
 handler.help = ['aiimage']
-handler.tags = ['creator']
+handler.tags = ['drawing']
 handler.command = /^((open)?ai-?(img|imag(in)?e|gambar|foto|dalle))$/i
 
 handler.premium = true
