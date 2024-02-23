@@ -14,8 +14,8 @@ let handler = async (m, {
     usedPrefix,
     command
 }) => {
-    if (!args || !args[0]) throw `✳️ Example :\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`
-    if (!args[0].match(/youtu/gi)) throw `❎ Verify that the YouTube link`
+    if (!args || !args[0]) throw ` Example :\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`
+    if (!args[0].match(/youtu/gi)) throw `تحقق من الرابط هل هو صحيح ؟..`
     let q = args[1] || "360p"
     let v = args[0]
     await conn.reply(m.chat, wait, m)
@@ -24,16 +24,13 @@ let handler = async (m, {
 
         let item = await ytmp4(args[0], q.split("p")[0])
         if ((item.contentLength).split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader V1*\n\n*⚖️Size* : ${item.contentLength}\n*🎞️Quality* : ${item.quality}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(item.videoUrl)}`)
-        let captvid = `🔍 *[ RESULT V1 ]*
+        let captvid = ` الفيديو الخاص بك 
 
-📷 *Image URL:* ${item.thumb.url || 'Tidak diketahui'}
-📚 *Title:* ${item.title || 'Tidak diketahui'}
-📅 *Date:* ${item.date || 'Tidak diketahui'}
-⏱️ *Duration:* ${item.duration || 'Tidak diketahui'}
-📺 *Channel:* ${item.channel || 'Tidak diketahui'}
-🔒 *Quality:* ${item.quality || 'Tidak diketahui'}
-📦 *Content Length:* ${item.contentLength || 'Tidak diketahui'}
-📝 *Description:* ${item.description || 'Tidak diketahui'}
+📚 *العنوان:* ${item.title || 'Tidak diketahui'}
+📅 *تاريخ الفيديو:* ${item.date || 'Tidak diketahui'}
+📺 *القناة:* ${item.channel || 'Tidak diketahui'}
+🔒 *الجودة:* ${item.quality || 'Tidak diketahui'}
+📝 *الوصف:* ${item.description || 'Tidak diketahui'}
 `.trim()
         let dls = "Downloading video succes"
         let doc = {
@@ -70,10 +67,10 @@ let handler = async (m, {
             if (size.split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader V2*\n\n*⚖️Size* : ${size}\n*🎞️quality* : ${q}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(dl_url)}`)
             let captvid = `🔍 *[ RESULT V2 ]*
   
-*📌Títle* : ${title || 'Tidak diketahui'}
-*📟 Ext* : mp4
-*🎞️Quality* : ${q || 'Tidak diketahui'}
-*⚖️Size* : ${size || 'Tidak diketahui'}
+*📌العنوان* : ${title || 'Tidak diketahui'}
+*📟 النواع* : mp4
+*🎞️الجودة* : ${q || 'Tidak diketahui'}
+*⚖️الحجم* : ${size || 'Tidak diketahui'}
 `.trim()
             let dls = "Downloading video succes"
             let doc = {
@@ -86,7 +83,7 @@ let handler = async (m, {
                     externalAdReply: {
                         showAdAttribution: true,
                         mediaType: 2,
-                        mediaUrl: v,
+                        mediaUrl: "https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt",
                         title: title,
                         body: dls,
                         sourceUrl: v,
