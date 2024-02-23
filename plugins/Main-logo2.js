@@ -15,7 +15,7 @@ responseType: 'arraybuffer'
 await conn.sendFile(m.chat, result.data, 'Error.jpg', `*PROCESSING!!*\n*EFFECT: ${effect}*`, m)
 }
 handler.help = ['main']
-handler.tags = ['logo2']
+handler.tags = ['logo']
 handler.command = /^(logo2|logi2)$/i
 export default handler
 
