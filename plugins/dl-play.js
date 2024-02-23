@@ -1,292 +1,239 @@
 import fetch from "node-fetch"
-import ytdl from "ytdl-core"
 import yts from "yt-search"
-import {
-    generateWAMessageFromContent
-} from "@whiskeysockets/baileys"
+import ytdl from 'ytdl-core'
+import axios from 'axios'
+import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
+let handler = async (m, { conn, command, args, text, usedPrefix }) => {
+let q, v, yt, dl_url, ttl, size, lolhuman, lolh, n, n2, n3, n4, cap, qu, currentQuality   
+if (!text) await conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}𝙀𝙎𝘾𝙍𝙄𝘽𝘼 𝙀𝙇 𝙉𝙊𝙈𝘽𝙍𝙀 𝙊 𝙏𝙄𝙏𝙐𝙇𝙊\n𝙀𝙅𝙀𝙈𝙋𝙇𝙊\n*${usedPrefix + command} Los Cafres - Tus ojos*\n\n𝙒𝙍𝙄𝙏𝙀 𝙏𝙃𝙀 𝙉𝘼𝙈𝙀 𝙊𝙍 𝙏𝙄𝙏𝙇𝙀\n𝙀𝙓𝘼𝙈𝙋𝙇𝙀\n*${usedPrefix + command} Los Cafres - Tus ojos*`, m, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: wm, body: `Canal de WhatsApp`, mediaType: 3, sourceUrl: cnl, thumbnail: imagen1}}}, { quoted: m })
+try {
+const yt_play = await search(args.join(" "))
+let additionalText = ''
+if (command === 'play') {
+additionalText = '𝘼𝙐𝘿𝙄𝙊 🔊'
+} else if (command === 'play2') {
+additionalText = '𝙑𝙄𝘿𝙀𝙊 🎥'}
+let captionvid = `𓆩 𓃠 𓆪 ✧═══ ${vs} ═══✧ 𓆩 𓃠 𓆪*
 
-let limit = 80
-let handler = async (m, {
-    conn,
-    command,
-    text,
-    args,
-    usedPrefix
-}) => {
-    if (!text) throw `Use example *${usedPrefix + command}* naruto blue bird`
-    const combinedRegex = /^(play|ytplay|ytmp3|playmp3|playmp4|ytplaymp4)$/i;
-    const isMP3 = combinedRegex.test(command);
+ও 𝑻𝑰𝑻𝑼𝑳𝑶 || 𝑻𝑰𝑻𝑳𝑬
+»  ${yt_play[0].title}
+﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
+ও 𝑷𝑼𝑩𝑳𝑰𝑪𝑨𝑫𝑶 || 𝑷𝑼𝑩𝑳𝑰𝑺𝑯𝑬𝑫
+» ${yt_play[0].ago}
+﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
+ও 𝑫𝑼𝑹𝑨𝑪𝑰𝑶𝑵 || 𝑫𝑼𝑹𝑨𝑻𝑰𝑶𝑵
+» ${secondString(yt_play[0].duration.seconds)}
+﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
+ও 𝑽𝑰𝑺𝑻𝑨𝑺 || 𝑽𝑰𝑬𝑾𝑺
+» ${MilesNumber(yt_play[0].views)}
+﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
+ও 𝑼𝑹𝑳 || 𝑳𝑰𝑵𝑲
+» ${yt_play[0].url}
+﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘
+ও 𝙀𝙉𝙑𝙄𝘼𝘿𝙊 ${additionalText}, 𝘼𝙂𝙐𝘼𝙍𝘿𝙀 𝙐𝙉 𝙈𝙊𝙈𝙀𝙉𝙏𝙊
 
-    try {
-        let vid = await searchAndFilterVideos(text)
-        if (!vid) throw "Video Not Found, Try Another Title"
-        let {
-            title,
-            thumbnail,
-            timestamp,
-            views,
-            ago,
-            url
-        } = vid
-        let dla = "Downloading audio please wait"
-        let dls = "Downloading audio succes"
-
-        let captvid = `📺 *Title:* ${title ? title : 'tidak diketahui'}
-⌛ *Duration:* ${timestamp ? timestamp : 'tidak diketahui'}
-👀 *Views:* ${formatNumber(views) ? formatNumber(views) : 'tidak diketahui'}
-📅 *Upload:* ${ago ? ago : 'tidak diketahui'}
-🔗 *Link:* ${url}
-
-${wait}
-`
-        let ytthumb = await (await conn.getFile(thumbnail)).data
-        let msg = await generateWAMessageFromContent(m.chat, {
-            extendedTextMessage: {
-                text: captvid,
-                jpegThumbnail: ytthumb,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    externalAdReply: {
-                        body: dla,
-                        containsAutoReply: true,
-                        mediaType: 1,
-                        mediaUrl: url,
-                        renderLargerThumbnail: true,
-                        showAdAttribution: true,
-                        sourceId: "WudySoft",
-                        sourceType: "PDF",
-                        previewType: "PDF",
-                        sourceUrl: url,
-                        thumbnail: ytthumb,
-                        thumbnailUrl: thumbnail,
-                        title: htki + " Y O U T U B E " + htka
-                    }
-                }
-            }
-        }, {
-            quoted: m
-        })
-        await conn.relayMessage(m.chat, msg.message, {})
-
-        if (isMP3) {
-            let Ytdl = await ytmp3(url)
-            let dls = "Play audio succes"
-            let ytthumb = await (await conn.getFile(Ytdl.meta.image)).data
-            let doc = {
-                audio: Ytdl.buffer,
-                mimetype: "audio/mp4",
-                fileName: Ytdl.meta.title,
-                contextInfo: {
-                    externalAdReply: {
-                        showAdAttribution: true,
-                        mediaType: 2,
-                        mediaUrl: url,
-                        title: Ytdl.meta.title,
-                        body: dls,
-                        sourceUrl: url,
-                        thumbnail: ytthumb
-                    }
-                }
-            }
-            await conn.sendMessage(m.chat, doc, {
-                quoted: m
-            })
-        } else {
-            let q = args[1] || "360p"
-            let item = await ytmp4(url, q.split("p")[0])
-            if ((item.contentLength).split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader*\n\n*⚖️Size* : ${item.contentLength}\n*🎞️Quality* : ${item.quality}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(item.videoUrl)}`)
-            let captvid = `🔍 *[ RESULT ]*
-
-📷 *Image URL:* ${item.thumb.url || 'Tidak diketahui'}
-📚 *Title:* ${item.title || 'Tidak diketahui'}
-📅 *Date:* ${item.date || 'Tidak diketahui'}
-⏱️ *Duration:* ${item.duration || 'Tidak diketahui'}
-📺 *Channel:* ${item.channel || 'Tidak diketahui'}
-🔒 *Quality:* ${item.quality || 'Tidak diketahui'}
-📦 *Content Length:* ${item.contentLength || 'Tidak diketahui'}
-📝 *Description:* ${item.description || 'Tidak diketahui'}
-`.trim()
-            let dls = "Play video succes"
-            let doc = {
-                video: {
-                    url: item.videoUrl
-                },
-                mimetype: "video/mp4",
-                caption: captvid,
-                contextInfo: {
-                    externalAdReply: {
-                        showAdAttribution: true,
-                        mediaType: 2,
-                        mediaUrl: url,
-                        title: item.title,
-                        body: dls,
-                        sourceUrl: url,
-                        thumbnail: await (await conn.getFile(item.image)).data
-                    }
-                }
-            }
-            await conn.sendMessage(m.chat, doc, {
-                quoted: m
-            })
-        }
-    } catch (e) {
-        await m.reply(eror)
-    }
-}
-handler.help = ["play"].map(v => v + " <pencarian>")
-handler.tags = ["downloader"]
-handler.command = /^(play|ytplay|ytmp3|playmp3|playmp4|ytplaymp4)$/i
-handler.limit = true
+*𓆩 ✿ 𓆪 ✧═══ ${vs} ═══✧ 𓆩 ✿ 𓆪*`  
+await conn.sendMessage(m.chat, {
+text: captionvid,
+contextInfo: {
+externalAdReply: {
+title: yt_play[0].title,
+body: packname,
+thumbnailUrl: yt_play[0].thumbnail, 
+mediaType: 1,
+showAdAttribution: true,
+renderLargerThumbnail: true
+}}} , { quoted: m })
+if (command == 'play') {	
+try {
+let q = '128kbps'
+let v = yt_play[0].url
+const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v))
+const dl_url = await yt.audio[q].download()
+const ttl = await yt.title
+const size = await yt.audio[q].fileSizeH
+await conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: 'audio/mpeg', contextInfo: {
+externalAdReply: {
+title: ttl,
+body: "",
+thumbnailUrl: yt_play[0].thumbnail, 
+mediaType: 1,
+showAdAttribution: true,
+renderLargerThumbnail: true
+}}} , { quoted: m })   
+} catch {
+try {
+const dataRE = await fetch(`https://api.akuari.my.id/downloader/youtube?link=${yt_play[0].url}`)
+const dataRET = await dataRE.json()
+await conn.sendMessage(m.chat, { audio: { url: dataRET.mp3[1].url }, mimetype: 'audio/mpeg', contextInfo: {
+externalAdReply: {
+title: yt_play[0].title,
+body: "",
+thumbnailUrl: yt_play[0].thumbnail, 
+mediaType: 1,
+showAdAttribution: true,
+renderLargerThumbnail: true
+}}} , { quoted: m })   
+} catch {
+try {
+let humanLol = await fetch(`https://api.lolhuman.xyz/api/ytplay?apikey=${lolkeysapi}&query=${yt_play[0].title}`)
+let humanRET = await humanLol.json()
+await conn.sendMessage(m.chat, { audio: { url: humanRET.result.audio.link }, mimetype: 'audio/mpeg', contextInfo: {
+externalAdReply: {
+title: yt_play[0].title,
+body: "",
+thumbnailUrl: yt_play[0].thumbnail, 
+mediaType: 1,
+showAdAttribution: true,
+renderLargerThumbnail: true
+}}} , { quoted: m })       
+} catch {     
+try {
+let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${lolkeysapi}&url=${yt_play[0].url}`)    
+let lolh = await lolhuman.json()
+let n = lolh.result.title || 'error'
+await conn.sendMessage(m.chat, { audio: { url: lolh.result.link}, mimetype: 'audio/mpeg', contextInfo: {
+externalAdReply: {
+title: n,
+body: "",
+thumbnailUrl: yt_play[0].thumbnail, 
+mediaType: 1,
+showAdAttribution: true,
+renderLargerThumbnail: true
+}}} , { quoted: m })   
+} catch {   
+try {
+let searchh = await yts(yt_play[0].url)
+let __res = searchh.all.map(v => v).filter(v => v.type == "video")
+let infoo = await ytdl.getInfo('https://youtu.be/' + __res[0].videoId)
+let ress = await ytdl.chooseFormat(infoo.formats, { filter: 'audioonly' })
+await conn.sendMessage(m.chat, { audio: { url: ress.url }, mimetype: 'audio/mpeg', contextInfo: {
+externalAdReply: {
+title: __res[0].title,
+body: "",
+thumbnailUrl: yt_play[0].thumbnail, 
+mediaType: 1,
+showAdAttribution: true,
+renderLargerThumbnail: true
+}}} , { quoted: m })   
+//conn.sendMessage(m.chat, { audio: { url: ress.url }, fileName: __res[0].title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m })  
+} catch {
+}}}}}
+}  
+if (command == 'play2') {
+try {
+let qu = '360'
+let q = qu + 'p'
+let v = yt_play[0].url
+const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v))
+const dl_url = await yt.video[q].download()
+const ttl = await yt.title
+const size = await yt.video[q].fileSizeH
+await await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 𝙏𝙄𝙏𝙐𝙇𝙊 | 𝙏𝙄𝙏𝙇𝙀\n┃ ${ttl}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
+} catch {   
+try {  
+let mediaa = await ytMp4(yt_play[0].url)
+await conn.sendMessage(m.chat, { video: { url: mediaa.result }, fileName: `error.mp4`, caption: `_${wm}_`, thumbnail: mediaa.thumb, mimetype: 'video/mp4' }, { quoted: m })     
+} catch {  
+try {
+let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${lolkeysapi}&url=${yt_play[0].url}`)    
+let lolh = await lolhuman.json()
+let n = lolh.result.title || 'error'
+let n2 = lolh.result.link
+let n3 = lolh.result.size
+let n4 = lolh.result.thumbnail
+await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `╭━❰  ${wm}  ❱━⬣\n┃ 💜 𝙏𝙄𝙏𝙐𝙇𝙊 | 𝙏𝙄𝙏𝙇𝙀\n┃ ${n}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, thumbnail: await fetch(n4) }, { quoted: m })
+} catch {
+}}}    
+}} catch {
+handler.limit = 0
+}}
+handler.command = ['play', 'play2']
+handler.exp = 0
+handler.limit = 1
 export default handler
 
-function formatNumber(num) {
-    const suffixes = ['', 'k', 'M', 'B', 'T'];
-    const numString = Math.abs(num).toString();
-    const numDigits = numString.length;
+async function search(query, options = {}) {
+const search = await yts.search({ query, hl: "es", gl: "ES", ...options });
+return search.videos};
 
-    if (numDigits <= 3) {
-        return numString;
-    }
+function MilesNumber(number) {
+const exp = /(\d)(?=(\d{3})+(?!\d))/g;
+const rep = "$1.";
+let arr = number.toString().split(".");
+arr[0] = arr[0].replace(exp, rep);
+return arr[1] ? arr.join(".") : arr[0]};
 
-    const suffixIndex = Math.floor((numDigits - 1) / 3);
-    let formattedNum = (num / Math.pow(1000, suffixIndex)).toFixed(1);
+function secondString(seconds) {
+seconds = Number(seconds);
+var d = Math.floor(seconds / (3600 * 24));
+var h = Math.floor((seconds % (3600 * 24)) / 3600);
+var m = Math.floor((seconds % 3600) / 60);
+var s = Math.floor(seconds % 60);
+var dDisplay = d > 0 ? d + (d == 1 ? " día, " : " días, ") : "";
+var hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " horas, ") : "";
+var mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " minutos, ") : "";
+var sDisplay = s > 0 ? s + (s == 1 ? " segundo" : " segundos") : "";
+return dDisplay + hDisplay + mDisplay + sDisplay};
 
-    // Menghapus desimal jika angka sudah bulat
-    if (formattedNum.endsWith('.0')) {
-        formattedNum = formattedNum.slice(0, -2);
-    }
+function bytesToSize(bytes) {
+return new Promise((resolve, reject) => {
+const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+if (bytes === 0) return 'n/a';
+const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10);
+if (i === 0) resolve(`${bytes} ${sizes[i]}`);
+resolve(`${(bytes / (1024 ** i)).toFixed(1)} ${sizes[i]}`)})};
 
-    return formattedNum + suffixes[suffixIndex];
-}
+async function ytMp3(url) {
+return new Promise((resolve, reject) => {
+ytdl.getInfo(url).then(async(getUrl) => {
+let result = [];
+for(let i = 0; i < getUrl.formats.length; i++) {
+let item = getUrl.formats[i];
+if (item.mimeType == 'audio/webm; codecs=\"opus\"') {
+let { contentLength } = item;
+let bytes = await bytesToSize(contentLength);
+result[i] = { audio: item.url, size: bytes }}};
+let resultFix = result.filter(x => x.audio != undefined && x.size != undefined) 
+let tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].audio}`);
+let tinyUrl = tiny.data;
+let title = getUrl.videoDetails.title;
+let thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url;
+resolve({ title, result: tinyUrl, result2: resultFix, thumb })}).catch(reject)})};
 
-async function searchAndFilterVideos(query, maxResults = 100, similarityThreshold = 0.5) {
-    try {
-        const res = await yts(query);
-        const videos = res.videos
-            .slice(0, maxResults)
-            .filter(video => {
-                const titleWords = video.title.toLowerCase().split(" ");
-                const queryWords = query.toLowerCase().split(" ");
-                const matchCount = titleWords.filter(word => queryWords.includes(word)).length;
-                return matchCount / titleWords.length >= similarityThreshold;
-            });
+async function ytMp4(url) {
+return new Promise(async(resolve, reject) => {
+ytdl.getInfo(url).then(async(getUrl) => {
+let result = [];
+for(let i = 0; i < getUrl.formats.length; i++) {
+let item = getUrl.formats[i];
+if (item.container == 'mp4' && item.hasVideo == true && item.hasAudio == true) {
+let { qualityLabel, contentLength } = item;
+let bytes = await bytesToSize(contentLength);
+result[i] = { video: item.url, quality: qualityLabel, size: bytes }}};
+let resultFix = result.filter(x => x.video != undefined && x.size != undefined && x.quality != undefined) 
+let tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].video}`);
+let tinyUrl = tiny.data;
+let title = getUrl.videoDetails.title;
+let thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url;
+resolve({ title, result: tinyUrl, rersult2: resultFix[0].video, thumb })}).catch(reject)})};
 
-        if (videos.length > 0) {
-            return videos[0];
-        } else if (res.videos.length > 0) {
-            return res.videos[0];
-        } else {
-            return {};
-        }
-    } catch (e) {
-        console.error(e);
-        return {};
-    }
-}
+async function ytPlay(query) {
+return new Promise((resolve, reject) => {
+yts(query).then(async(getData) => {
+let result = getData.videos.slice( 0, 5 );
+let url = [];
+for (let i = 0; i < result.length; i++) { url.push(result[i].url) }
+let random = url[0];
+let getAudio = await ytMp3(random);
+resolve(getAudio)}).catch(reject)})};
 
-async function ytmp3(url) {
-    try {
-        const {
-            videoDetails
-        } = await ytdl.getInfo(url, {
-            lang: "id"
-        });
-
-        const stream = ytdl(url, {
-            filter: "audioonly",
-            quality: 140
-        });
-        const chunks = [];
-
-        stream.on("data", (chunk) => {
-            chunks.push(chunk);
-        });
-
-        await new Promise((resolve, reject) => {
-            stream.on("end", resolve);
-            stream.on("error", reject);
-        });
-
-        const buffer = Buffer.concat(chunks);
-
-        return {
-            meta: {
-                title: videoDetails.title,
-                channel: videoDetails.author.name,
-                seconds: videoDetails.lengthSeconds,
-                description: videoDetails.description,
-                image: videoDetails.thumbnails.slice(-1)[0].url,
-            },
-            buffer: buffer,
-            size: buffer.length,
-        };
-    } catch (error) {
-        throw error;
-    }
-};
-
-async function shortUrl(url) {
-    let res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`)
-    return await res.text()
-}
-
-function formatDuration(seconds) {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
-
-    const formattedDuration = [];
-
-    if (hours > 0) {
-        formattedDuration.push(`${hours} hour`);
-    }
-
-    if (minutes > 0) {
-        formattedDuration.push(`${minutes} minute`);
-    }
-
-    if (remainingSeconds > 0) {
-        formattedDuration.push(`${remainingSeconds} second`);
-    }
-
-    return formattedDuration.join(' ');
-}
-
-function formatBytes(bytes) {
-    if (bytes === 0) {
-        return '0 B';
-    }
-    const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(1024));
-    return `${(bytes / 1024 ** i).toFixed(2)} ${sizes[i]}`;
-}
-
-async function ytmp4(query, quality = 134) {
-    try {
-        const videoInfo = await ytdl.getInfo(query, {
-            lang: 'id'
-        });
-        const format = ytdl.chooseFormat(videoInfo.formats, {
-            format: quality,
-            filter: 'videoandaudio'
-        })
-        let response = await fetch(format.url, {
-            method: 'HEAD'
-        });
-        let contentLength = response.headers.get('content-length');
-        let fileSizeInBytes = parseInt(contentLength);
-        return {
-            title: videoInfo.videoDetails.title,
-            thumb: videoInfo.videoDetails.thumbnails.slice(-1)[0],
-            date: videoInfo.videoDetails.publishDate,
-            duration: formatDuration(videoInfo.videoDetails.lengthSeconds),
-            channel: videoInfo.videoDetails.ownerChannelName,
-            quality: format.qualityLabel,
-            contentLength: formatBytes(fileSizeInBytes),
-            description: videoInfo.videoDetails.description,
-            videoUrl: format.url
-        }
-    } catch (error) {
-        throw error
-    }
-          }
+async function ytPlayVid(query) {
+return new Promise((resolve, reject) => {
+yts(query).then(async(getData) => {
+let result = getData.videos.slice( 0, 5 );
+let url = [];
+for (let i = 0; i < result.length; i++) { url.push(result[i].url) }
+let random = url[0];
+let getVideo = await ytMp4(random);
+resolve(getVideo)}).catch(reject)})};
