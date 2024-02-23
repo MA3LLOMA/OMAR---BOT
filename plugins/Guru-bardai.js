@@ -16,7 +16,7 @@ let handler = async (message, {
     if (message.quoted && message.quoted.text) {
       inputText = message.quoted.text;
     } else {
-      return message.reply("Give some text");
+      return message.reply("giev a text");
     }
   }
   let quotedMessage = message.quoted ? message.quoted : message;
@@ -43,7 +43,7 @@ let handler = async (message, {
 };
 
 handler.help = ["bard"];
-handler.tags = ['ai'];
+handler.tags = ['drawing'];
 handler.command = /^(bard)$/i;
 export default handler;
 
