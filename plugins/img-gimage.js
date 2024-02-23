@@ -9,10 +9,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 
   const match = text.match(/(\d+)/);
-  const numberOfImages = match ? parseInt(match[1]) : 1;
+  const numberOfImages = match ? parseInt(match[5]) : 1;
 
   try {
-    m.reply('wait');
+    m.reply(wait);
 
     const images = [];
 
