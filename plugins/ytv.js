@@ -24,9 +24,9 @@ let handler = async (m, {
 
         let item = await ytmp4(args[0], q.split("p")[0])
         if ((item.contentLength).split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader V1*\n\n*⚖️Size* : ${item.contentLength}\n*🎞️Quality* : ${item.quality}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(item.videoUrl)}`)
-        let captvid = `- *الفيديو الخاص بك*
+        let captvid = `🔍 *[ RESULT V1 ]*
 
-
+📷 *Image URL:* ${item.thumb.url || 'Tidak diketahui'}
 📚 *Title:* ${item.title || 'Tidak diketahui'}
 📅 *Date:* ${item.date || 'Tidak diketahui'}
 ⏱️ *Duration:* ${item.duration || 'Tidak diketahui'}
@@ -68,7 +68,7 @@ let handler = async (m, {
             const size = await yt.video[q].fileSizeH
 
             if (size.split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader V2*\n\n*⚖️Size* : ${size}\n*🎞️quality* : ${q}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(dl_url)}`)
-            let captvid = `- *الفيديو الخاص بك*
+            let captvid = `🔍 *[ RESULT V2 ]*
   
 *📌Títle* : ${title || 'Tidak diketahui'}
 *📟 Ext* : mp4
@@ -80,13 +80,13 @@ let handler = async (m, {
                 video: {
                     url: dl_url
                 },
-                mimetype: "YOUTUBE",
+                mimetype: "video/mp4",
                 caption: captvid,
                 contextInfo: {
                     externalAdReply: {
                         showAdAttribution: true,
                         mediaType: 2,
-                        mediaUrl: "https://www.instagram.com/ovmar_1",
+                        mediaUrl: v,
                         title: title,
                         body: dls,
                         sourceUrl: v,
@@ -186,4 +186,4 @@ async function ytmp4(query, quality = 134) {
     } catch (error) {
         throw error
     }
-          }
+               }
