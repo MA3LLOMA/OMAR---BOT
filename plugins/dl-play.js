@@ -1,1 +1,292 @@
-const _0x3253a9=_0x1a03;(function(_0x2883a0,_0x4cc760){const _0x1d3391=_0x1a03,_0x3577b6=_0x2883a0();while(!![]){try{const _0x387220=-parseInt(_0x1d3391(0x1f0))/0x1+parseInt(_0x1d3391(0x1fb))/0x2+parseInt(_0x1d3391(0x1ec))/0x3*(-parseInt(_0x1d3391(0x207))/0x4)+parseInt(_0x1d3391(0x208))/0x5*(-parseInt(_0x1d3391(0x1f4))/0x6)+-parseInt(_0x1d3391(0x206))/0x7+parseInt(_0x1d3391(0x20d))/0x8+-parseInt(_0x1d3391(0x1f3))/0x9*(-parseInt(_0x1d3391(0x20c))/0xa);if(_0x387220===_0x4cc760)break;else _0x3577b6['push'](_0x3577b6['shift']());}catch(_0x2f7f22){_0x3577b6['push'](_0x3577b6['shift']());}}}(_0x5009,0x1d02e));import _0x50cda0 from'youtubedl-core';import _0x57ff77 from'youtube-yts';import _0x38e0ef from'fs';function _0x5009(){const _0x4dbfaf=['\x0a\x0a\x20\x20⬡▸\x20\x20Views:\x20','1716760ZlbOTY','1007680MpcORn','get','data','sendMessage','highestaudio','\x0a\x0a\x20\x20⬡▸\x20\x20Duration:\x20','tags','log','command','3hWcZQU','chat','unlink','play','59303tMIDav','/ytsearch?text=','exp','18WIThZl','6ieEJAI','Use\x20example\x20','createWriteStream','\x20<query>','audioonly','\x20\x20take\x20the\x20the\x20wheel','help','286810GGQCqf','\x0a\x0a\x20\x20⬡▸\x20\x20Link:\x20','.mp3','Video\x20Not\x20Found,\x20Try\x20Another\x20Title','audio/mpeg','error','An\x20error\x20occurred\x20while\x20searching\x20for\x20YouTube\x20videos.','⬡▸\x20\x20••๑⋯\x20⬡▸\x20\x20Y\x20O\x20U\x20T\x20U\x20B\x20E\x20⬡▸\x20\x20!\x20✼\x0a\x0a\x20\x20⬡▸\x20\x20Title:\x20','HERE\x20IS\x20YOUR\x20SONG\x20MADE\x20BY\x20OMAR-BOT','map','getFile','1494038bAMPnx','151324FVDdTQ','916595mvWOtY','\x0a\x0a*تابع صاحب البوت في الإنستجرام ❤️* \n www.instagram.com/ovmar_1\x20','\x0a\x0a\x20\x20⬡▸\x20\x20Upload:\x20'];_0x5009=function(){return _0x4dbfaf;};return _0x5009();}import{pipeline}from'stream';import{promisify}from'util';import _0x3a2d8e from'os';import _0x3bc163 from'axios';const streamPipeline=promisify(pipeline);function _0x1a03(_0x1e299f,_0xa8c68d){const _0x50093b=_0x5009();return _0x1a03=function(_0x1a030c,_0x27fb0b){_0x1a030c=_0x1a030c-0x1e7;let _0x298cc7=_0x50093b[_0x1a030c];return _0x298cc7;},_0x1a03(_0x1e299f,_0xa8c68d);}let handler=async(_0x43906c,{conn:_0x26fee2,command:_0x354e95,text:_0x5cdfdf,usedPrefix:_0x573938})=>{const _0x197d79=_0x1a03;if(!_0x5cdfdf)throw _0x197d79(0x1f5)+_0x573938+_0x354e95+_0x197d79(0x1f9);await _0x43906c['react'](rwait);try{const _0x17e828=encodeURIComponent(_0x5cdfdf),_0x13f860=await _0x3bc163[_0x197d79(0x20e)](gurubot+_0x197d79(0x1f1)+_0x17e828),_0x75cc9e=_0x13f860[_0x197d79(0x20f)]['results'][0x0];if(!_0x75cc9e)throw _0x197d79(0x1fe);const {title:_0x58a8ba,thumbnail:_0x5aedc7,duration:_0x528127,views:_0x4bb1f8,uploaded:_0xebf7da,url:_0x41263a}=_0x75cc9e,_0x50e588=_0x197d79(0x202)+_0x58a8ba+_0x197d79(0x1e8)+_0x528127+_0x197d79(0x20b)+_0x4bb1f8+_0x197d79(0x20a)+_0xebf7da+_0x197d79(0x1fc)+_0x41263a+_0x197d79(0x209);_0x26fee2['sendMessage'](_0x43906c[_0x197d79(0x1ed)],{'image':{'url':_0x5aedc7},'caption':_0x50e588,'footer':author},{'quoted':_0x43906c});const _0x1bee45=_0x50cda0(_0x41263a,{'filter':_0x197d79(0x1f8),'quality':_0x197d79(0x1e7)}),_0x3110a4=_0x3a2d8e['tmpdir'](),_0x3fce7c=_0x38e0ef[_0x197d79(0x1f6)](_0x3110a4+'/'+_0x58a8ba+'.mp3');await streamPipeline(_0x1bee45,_0x3fce7c);const _0x4d6458={'audio':{'url':_0x3110a4+'/'+_0x58a8ba+_0x197d79(0x1fd)},'mimetype':_0x197d79(0x1ff),'ptt':![],'waveform':[0x64,0x0,0x0,0x0,0x0,0x0,0x64],'fileName':''+_0x58a8ba,'contextInfo':{'externalAdReply':{'showAdAttribution':!![],'mediaType':0x2,'mediaUrl':_0x41263a,'title':_0x58a8ba,'body':_0x197d79(0x203),'sourceUrl':_0x41263a,'thumbnail':await(await _0x26fee2[_0x197d79(0x205)](_0x5aedc7))[_0x197d79(0x20f)]}}};await _0x26fee2[_0x197d79(0x210)](_0x43906c[_0x197d79(0x1ed)],_0x4d6458,{'quoted':_0x43906c}),_0x38e0ef[_0x197d79(0x1ee)](_0x3110a4+'/'+_0x58a8ba+'.mp3',_0x489c76=>{const _0x3b11f8=_0x197d79;_0x489c76?console['error']('Failed\x20to\x20delete\x20audio\x20file:\x20'+_0x489c76):console[_0x3b11f8(0x1ea)]('Deleted\x20audio\x20file:\x20'+_0x3110a4+'/'+_0x58a8ba+_0x3b11f8(0x1fd));});}catch(_0x262440){console[_0x197d79(0x200)](_0x262440);throw _0x197d79(0x201);}};handler[_0x3253a9(0x1fa)]=[_0x3253a9(0x1ef)][_0x3253a9(0x204)](_0x43196a=>_0x43196a+_0x3253a9(0x1f7)),handler[_0x3253a9(0x1e9)]=['downloader'],handler[_0x3253a9(0x1eb)]=/^play$/i,handler[_0x3253a9(0x1f2)]=0x0;export default handler;
+import fetch from "node-fetch"
+import ytdl from "ytdl-core"
+import yts from "yt-search"
+import {
+    generateWAMessageFromContent
+} from "@whiskeysockets/baileys"
+
+let limit = 80
+let handler = async (m, {
+    conn,
+    command,
+    text,
+    args,
+    usedPrefix
+}) => {
+    if (!text) throw `Use example *${usedPrefix + command}* naruto blue bird`
+    const combinedRegex = /^(play|ytplay|ytmp3|playmp3|playmp4|ytplaymp4)$/i;
+    const isMP3 = combinedRegex.test(command);
+
+    try {
+        let vid = await searchAndFilterVideos(text)
+        if (!vid) throw "Video Not Found, Try Another Title"
+        let {
+            title,
+            thumbnail,
+            timestamp,
+            views,
+            ago,
+            url
+        } = vid
+        let dla = "Downloading audio please wait"
+        let dls = "Downloading audio succes"
+
+        let captvid = `📺 *Title:* ${title ? title : 'tidak diketahui'}
+⌛ *Duration:* ${timestamp ? timestamp : 'tidak diketahui'}
+👀 *Views:* ${formatNumber(views) ? formatNumber(views) : 'tidak diketahui'}
+📅 *Upload:* ${ago ? ago : 'tidak diketahui'}
+🔗 *Link:* ${url}
+
+${wait}
+`
+        let ytthumb = await (await conn.getFile(thumbnail)).data
+        let msg = await generateWAMessageFromContent(m.chat, {
+            extendedTextMessage: {
+                text: captvid,
+                jpegThumbnail: ytthumb,
+                contextInfo: {
+                    mentionedJid: [m.sender],
+                    externalAdReply: {
+                        body: dla,
+                        containsAutoReply: true,
+                        mediaType: 1,
+                        mediaUrl: url,
+                        renderLargerThumbnail: true,
+                        showAdAttribution: true,
+                        sourceId: "WudySoft",
+                        sourceType: "PDF",
+                        previewType: "PDF",
+                        sourceUrl: url,
+                        thumbnail: ytthumb,
+                        thumbnailUrl: thumbnail,
+                        title: htki + " Y O U T U B E " + htka
+                    }
+                }
+            }
+        }, {
+            quoted: m
+        })
+        await conn.relayMessage(m.chat, msg.message, {})
+
+        if (isMP3) {
+            let Ytdl = await ytmp3(url)
+            let dls = "Play audio succes"
+            let ytthumb = await (await conn.getFile(Ytdl.meta.image)).data
+            let doc = {
+                audio: Ytdl.buffer,
+                mimetype: "audio/mp4",
+                fileName: Ytdl.meta.title,
+                contextInfo: {
+                    externalAdReply: {
+                        showAdAttribution: true,
+                        mediaType: 2,
+                        mediaUrl: url,
+                        title: Ytdl.meta.title,
+                        body: dls,
+                        sourceUrl: url,
+                        thumbnail: ytthumb
+                    }
+                }
+            }
+            await conn.sendMessage(m.chat, doc, {
+                quoted: m
+            })
+        } else {
+            let q = args[1] || "360p"
+            let item = await ytmp4(url, q.split("p")[0])
+            if ((item.contentLength).split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader*\n\n*⚖️Size* : ${item.contentLength}\n*🎞️Quality* : ${item.quality}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(item.videoUrl)}`)
+            let captvid = `🔍 *[ RESULT ]*
+
+📷 *Image URL:* ${item.thumb.url || 'Tidak diketahui'}
+📚 *Title:* ${item.title || 'Tidak diketahui'}
+📅 *Date:* ${item.date || 'Tidak diketahui'}
+⏱️ *Duration:* ${item.duration || 'Tidak diketahui'}
+📺 *Channel:* ${item.channel || 'Tidak diketahui'}
+🔒 *Quality:* ${item.quality || 'Tidak diketahui'}
+📦 *Content Length:* ${item.contentLength || 'Tidak diketahui'}
+📝 *Description:* ${item.description || 'Tidak diketahui'}
+`.trim()
+            let dls = "Play video succes"
+            let doc = {
+                video: {
+                    url: item.videoUrl
+                },
+                mimetype: "video/mp4",
+                caption: captvid,
+                contextInfo: {
+                    externalAdReply: {
+                        showAdAttribution: true,
+                        mediaType: 2,
+                        mediaUrl: url,
+                        title: item.title,
+                        body: dls,
+                        sourceUrl: url,
+                        thumbnail: await (await conn.getFile(item.image)).data
+                    }
+                }
+            }
+            await conn.sendMessage(m.chat, doc, {
+                quoted: m
+            })
+        }
+    } catch (e) {
+        await m.reply(eror)
+    }
+}
+handler.help = ["play"].map(v => v + " <pencarian>")
+handler.tags = ["downloader"]
+handler.command = /^(play|ytplay|ytmp3|playmp3|playmp4|ytplaymp4)$/i
+handler.limit = true
+export default handler
+
+function formatNumber(num) {
+    const suffixes = ['', 'k', 'M', 'B', 'T'];
+    const numString = Math.abs(num).toString();
+    const numDigits = numString.length;
+
+    if (numDigits <= 3) {
+        return numString;
+    }
+
+    const suffixIndex = Math.floor((numDigits - 1) / 3);
+    let formattedNum = (num / Math.pow(1000, suffixIndex)).toFixed(1);
+
+    // Menghapus desimal jika angka sudah bulat
+    if (formattedNum.endsWith('.0')) {
+        formattedNum = formattedNum.slice(0, -2);
+    }
+
+    return formattedNum + suffixes[suffixIndex];
+}
+
+async function searchAndFilterVideos(query, maxResults = 100, similarityThreshold = 0.5) {
+    try {
+        const res = await yts(query);
+        const videos = res.videos
+            .slice(0, maxResults)
+            .filter(video => {
+                const titleWords = video.title.toLowerCase().split(" ");
+                const queryWords = query.toLowerCase().split(" ");
+                const matchCount = titleWords.filter(word => queryWords.includes(word)).length;
+                return matchCount / titleWords.length >= similarityThreshold;
+            });
+
+        if (videos.length > 0) {
+            return videos[0];
+        } else if (res.videos.length > 0) {
+            return res.videos[0];
+        } else {
+            return {};
+        }
+    } catch (e) {
+        console.error(e);
+        return {};
+    }
+}
+
+async function ytmp3(url) {
+    try {
+        const {
+            videoDetails
+        } = await ytdl.getInfo(url, {
+            lang: "id"
+        });
+
+        const stream = ytdl(url, {
+            filter: "audioonly",
+            quality: 140
+        });
+        const chunks = [];
+
+        stream.on("data", (chunk) => {
+            chunks.push(chunk);
+        });
+
+        await new Promise((resolve, reject) => {
+            stream.on("end", resolve);
+            stream.on("error", reject);
+        });
+
+        const buffer = Buffer.concat(chunks);
+
+        return {
+            meta: {
+                title: videoDetails.title,
+                channel: videoDetails.author.name,
+                seconds: videoDetails.lengthSeconds,
+                description: videoDetails.description,
+                image: videoDetails.thumbnails.slice(-1)[0].url,
+            },
+            buffer: buffer,
+            size: buffer.length,
+        };
+    } catch (error) {
+        throw error;
+    }
+};
+
+async function shortUrl(url) {
+    let res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`)
+    return await res.text()
+}
+
+function formatDuration(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+
+    const formattedDuration = [];
+
+    if (hours > 0) {
+        formattedDuration.push(`${hours} hour`);
+    }
+
+    if (minutes > 0) {
+        formattedDuration.push(`${minutes} minute`);
+    }
+
+    if (remainingSeconds > 0) {
+        formattedDuration.push(`${remainingSeconds} second`);
+    }
+
+    return formattedDuration.join(' ');
+}
+
+function formatBytes(bytes) {
+    if (bytes === 0) {
+        return '0 B';
+    }
+    const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(1024));
+    return `${(bytes / 1024 ** i).toFixed(2)} ${sizes[i]}`;
+}
+
+async function ytmp4(query, quality = 134) {
+    try {
+        const videoInfo = await ytdl.getInfo(query, {
+            lang: 'id'
+        });
+        const format = ytdl.chooseFormat(videoInfo.formats, {
+            format: quality,
+            filter: 'videoandaudio'
+        })
+        let response = await fetch(format.url, {
+            method: 'HEAD'
+        });
+        let contentLength = response.headers.get('content-length');
+        let fileSizeInBytes = parseInt(contentLength);
+        return {
+            title: videoInfo.videoDetails.title,
+            thumb: videoInfo.videoDetails.thumbnails.slice(-1)[0],
+            date: videoInfo.videoDetails.publishDate,
+            duration: formatDuration(videoInfo.videoDetails.lengthSeconds),
+            channel: videoInfo.videoDetails.ownerChannelName,
+            quality: format.qualityLabel,
+            contentLength: formatBytes(fileSizeInBytes),
+            description: videoInfo.videoDetails.description,
+            videoUrl: format.url
+        }
+    } catch (error) {
+        throw error
+    }
+          }
