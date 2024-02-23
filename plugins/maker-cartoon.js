@@ -1,31 +1,62 @@
-import fetch from 'node-fetch'
-import uploadImage from '../../lib/uploadImage.js'
-import uploadFile from '../../lib/uploadFile.js'
+import fetch from 'node-fetch';
 
 let handler = async (m, {
-    conn,
-    usedPrefix,
     command,
-    text
+    usedPrefix,
+    conn,
+    text,
+    args
 }) => {
-    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-    let name = await conn.getName(who)
+
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
-    if (!mime) throw 'Kirim/Reply Gambar Dengan Caption .toanime'
-    m.reply(wait)
+    if (!mime) throw 'No media found'
+    let media = await q.download()
+
+    await m.reply(wait)
     try {
-        let media = await q.download()
-        let url = await uploadFile(media)
-        let hasil = `https://api.xyroinee.xyz/api/others/toanime?url=${url}&apikey=${global.xyro}`
-        conn.sendFile(m.chat, await (await fetch(hasil)).arrayBuffer(), 'error.jpg', 'Nih Kak, Maaf Kalau Hasilnya Tidak Sesuai Keinginan', m)
+        const openAIResponse = await fetchAnimeData(media);
+
+        if (openAIResponse) {
+            const result = openAIResponse;
+            const tag = `@${m.sender.split('@')[0]}`;
+
+            await conn.sendMessage(m.chat, {
+                image: {
+                    url: result
+                },
+                caption: `Nih effect *photo-to-anime* nya\nRequest by: ${tag}`,
+                mentions: [m.sender]
+            }, {
+                quoted: m
+            });
+        } else {
+            console.log("Tidak ada respons dari OpenAI atau terjadi kesalahan.");
+        }
     } catch (e) {
-        m.reply(eror)
+        await m.reply(eror)
     }
 }
-handler.help = ['toanimex']
-handler.tags = ['ai']
-handler.command = /^(jadianimex|toanimex)$/i
+handler.help = ["jadianime"].map(v => v + " (Balas foto)")
+handler.tags = ["tools"]
+handler.command = /^(jadianime)$/i
 handler.limit = true
-
 export default handler
+
+async function fetchAnimeData(imageBuffer) {
+    const api = "https://api.taoanhdep.com/public/anime.php";
+    const base64String = imageBuffer.toString('base64');
+    const body = new URLSearchParams();
+    body.set('image', base64String);
+
+    const response = await fetch(api, {
+        headers: {
+            "content-type": "application/x-www-form-urlencoded",
+        },
+        body: body.toString(),
+        method: "POST",
+    });
+
+    const data = await response.json();
+    return data.img;
+}
