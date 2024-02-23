@@ -12,8 +12,8 @@ let handler = async (m, { conn, text }) => {
     m.react(done)
 }
 
-handler.help = ['bingimg1 <query>']
-handler.tags = ['dalle']
-handler.command = /^bingimg1$/i
+handler.help = ['bingimg2 <query>']
+handler.tags = ['drawing']
+handler.command = /^bingimg2$/i
 
 export default handler
