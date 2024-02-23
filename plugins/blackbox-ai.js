@@ -5,7 +5,7 @@ const endpoint = 'https://mzn-bbox.onrender.com/bb?ask=';
 let handler = async (m, { text, conn, usedPrefix, command }) => {
   try {
     if (!text) {
-      throw `❓ *Please provide some text to use Blackbox AI*`;
+      throw `هاذا الأمر يقوم بالبحث عن أي موضوع وتاريخه\n\n example:\n.balckbox Morocco`;
     }
 
     // Append user's JID to the API endpoint
@@ -14,7 +14,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 
     let res = {};
     try {
-      await m.reply('⌛ AI is thinking...');
+      await m.reply("wait");
       res = await axios.get(apiEndpoint);
     } catch (e) {
       console.error(e);
@@ -30,7 +30,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 };
 
 handler.help = ['blackbox'];
-handler.tags = ['AI'];
+handler.tags = ['ai'];
 handler.command = ['blackbox', 'bb'];
 
 export default handler;
