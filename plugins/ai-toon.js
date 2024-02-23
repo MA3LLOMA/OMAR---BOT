@@ -37,7 +37,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 };
 
 handler.help = ['toonai <version> <text>'];
-handler.tags = ['dalle'];
+handler.tags = ['drawing'];
 handler.command = ['toonai', 'toonimage', 'toon'];
 
 export default handler;
