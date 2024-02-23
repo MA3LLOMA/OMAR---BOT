@@ -43,7 +43,7 @@ const handler = async (m, {conn, args, isPrems, isOwner, command}) => {
     m.reply(e.toString());
   }
 };
-handler.help = ['ytd'];
+handler.help = ['ytd2'];
 handler.tags = ['downloader'];
 handler.command = ['videodoc', 'documentvid', 'videodocumento', 'ytshort'];
 handler.exp = 3;
