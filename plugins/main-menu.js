@@ -24,7 +24,6 @@ import {
 
    ╰────────────────
 
-%readmore
 
  `.trimStart(),
  header: "┌─⦿『 *_%category_* 』⦿",
