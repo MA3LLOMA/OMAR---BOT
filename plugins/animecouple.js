@@ -10,7 +10,7 @@ let handler = async (m, { conn }) => {
   await conn.sendFile(m.chat, ciwi, '', '_ارسلها لصديقك♀️_\n ولا تنسى متابعتي هنا \ninstagram.com/ovmar_1', m)
 }
 handler.help = ['ppcouple','tofanime']
-handler.tags = ['anime']
+handler.tags = ['قائمة الأنمي والكرتون']
 handler.command = ['ppcouple','tofanime'] 
 
 
