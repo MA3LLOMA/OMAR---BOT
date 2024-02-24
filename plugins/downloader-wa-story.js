@@ -14,7 +14,7 @@ let handler = async (m, {
 }
 
 handler.help = ['downloadsw']
-handler.tags = ['tools']
+handler.tags = ['قائمة التحميل']
 handler.command = /^((sw|status)(dl|download)|(dl|download)(sw|status))$/i
 
 export default handler
