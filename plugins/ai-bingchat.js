@@ -11,7 +11,7 @@ const handler = async (m, {
     } else if (m.quoted && m.quoted.text) {
         text = m.quoted.text;
     } else {
-        throw 'Input teks atau reply teks!';
+        throw 'هاذا الأمر خاص بالذكاء الإصناعي والتحدث معه \n\n example: .bingchat hy omar how are u!';
     }
 
     await conn.reply(m.chat, wait, m);
@@ -24,13 +24,13 @@ const handler = async (m, {
             await m.reply(data.result)
         } catch (error) {
             console.error(`Error in handler: ${error.message}`);
-            await m.reply('An error occurred while processing the request.');
+            await m.reply('حدث خطأ حاول مرة اخرى..');
         }
     }
 };
 
 handler.help = ["bingchat *[query]*"];
-handler.tags = ["ai"];
+handler.tags = ["قائمة الذكاء الإصطناعي"];
 handler.command = /^(bingchat)$/i;
 export default handler;
 
