@@ -5,14 +5,14 @@ let handler = async (m, { text, conn }) => {
     user.afk = + new Date
     user.afkReason = text
     m.reply(`
-  😴 *AFK* 
-You are now afk until u send a message 
+  😴 *إستراحة* 
+ ثم منح إسراحة إستخدام البوت
 ▢ *User:* ${conn.getName(m.sender)} 
 ▢ *Reason:* ${text ? text : ''}
   `)
 }
 handler.help = ['afk <reason>']
-handler.tags = ['fun']
+handler.tags = ['قائمة الترفيه']
 handler.command = ['afk']
 handler.group = true
 
