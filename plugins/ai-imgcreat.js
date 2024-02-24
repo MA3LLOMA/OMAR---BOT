@@ -3,7 +3,7 @@ import { Configuration, OpenAIApi } from 'openai'
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-	if (!text) throw `! masukkan detail teks, semakin detail akan semakin akurat.\n\n*Contoh :*\n${usedPrefix + command} a photo of a phone from the 20s`
+	if (!text) throw `هاذا الأمر خاص بتوليد الصور بالكتابة. \n\n example: .aiimage morocco sahara`
 	try {
 		let data = db.data.datas
 		if (data.openaikey.length == 0) throw `key belum diset.\nGunakan *${usedPrefix}setopenaikey your_keys*\n\n_Dapatkan key di https://beta.openai.com/account/api-keys_`
@@ -28,7 +28,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 }
 
 handler.help = ['aiimage']
-handler.tags = ['drawing']
+handler.tags = ['قائمة توليد الصور']
 handler.command = /^((open)?ai-?(img|imag(in)?e|gambar|foto|dalle))$/i
 
 handler.premium = true
