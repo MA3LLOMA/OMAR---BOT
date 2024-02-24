@@ -6,5 +6,5 @@ conn.sendFile(m.chat, haha, 'error.jpg', `_${command}_`, m)
 //conn.sendButton(m.chat, `_${command}_`.trim(), author, haha, [['🔄 NEXT 🔄', `${usedPrefix + command}`]], m)    
 }
 handler.command = handler.help = ['akira', 'akiyama', 'anna', 'asuna', 'ayuzawa', 'boruto', 'chiho', 'chitoge', 'deidara', 'erza', 'elaina', 'eba', 'emilia', 'hestia', 'hinata', 'inori', 'isuzu', 'itachi', 'itori', 'kaga', 'kagura', 'kaori', 'keneki', 'kotori', 'kurumi', 'madara', 'mikasa', 'miku', 'minato', 'naruto', 'nezuko', 'sagiri', 'sasuke', 'sakura']
-handler.tags = ['anime']
+handler.tags = ['قائمة الأنمي والكرتون']
 export default handler
