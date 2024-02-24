@@ -30,8 +30,8 @@ const defaultMenu = {
 𖦹 𝙊 𝙈 𝘼 𝙍 - 𝘽 𝙊 𝙏
 
  `.trimStart(),
- header: "┌─⦿『 *_%category_* 』⦿",
- body: "┃ %cmd",
+ header: "┌─⦿『 *%category* 』⦿",
+ body: "┃ %_cmd_",
  footer: "╰─────────────────⦿",
  after: "By Omar",
  }
