@@ -1,216 +1,271 @@
-import fetch from 'node-fetch'
-import yts from 'yt-search'
-import ytdl from 'ytdl-core'
-import axios from 'axios'
-import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
+import {
+  promises,
+  readFileSync
+ } from "fs"
+ import {
+  join
+ } from "path"
+ import {
+  xpRange
+ } from "../lib/levelling.js"
+ import moment from "moment-timezone"
+ import os from "os"
+ import fs from "fs"
+ import fetch from "node-fetch"
+ 
+ const defaultMenu = {
+  before: `
+  「 ${botname} 🎁XMD 」\n
+  *%ucpn*
+⍟────────────────⍟
+*REMEMBER THIS BOT IS FOR*
+*EDUCATIONAL PERPOSES*
+⍟────────────────⍟
+*©Salman Ahmand*
+⍟────────────────⍟
+*_Konnichiwa! Its XLICON-MD A_* 
+*_Multi-Device Whatsapp BOT_*
+*_Recoded By Salman Ahmad And Abraham Dwamena_*
+⍟────────────────⍟
+                                    
+ ▀▄▀ █░░ █ █▀▀ █▀█ █▄░█  
+ █░█ █▄▄ █ █▄▄ █▄█ █░▀█  
+          
+ █▀▄▀█ █▀▄
+ █░▀░█ █▄▀
+ 
+╭─────────────────⦿
+┃    🔰〘 𝙄𝙉𝙁𝙊 〙🔰
+╰┬────────────────⦿
+┌┤
+┃
+┃ *_Founder_*: Salman Ahmad 
+┃ *_Bot Name_*: ${botname}
+┃ *_Mode_*: %mode
+┃ *_HOST_*: kali Linix
+┃ *_Type_*: NodeJs
+┃ *_Baileys_*: Multi Device
+┃ *_Prefix_*: [ *%_p* ]
+┃ *_Uptime_*: %muptime
+┃ *_Database_*:  %totalreg
+┃
+╰──────────────────⦿
+╭──────────────────⦿
+┃    🔰〘 𝙐𝙎𝙀𝙍 〙🔰
+╰┬─────────────────⦿
+┌┤     
+┃
+┃ *_Name_*: %name
+┃ *_Gold_*: %credit
+┃ *_Role_*: XLICON-MD-TESTER
+┃ *_Level_*: %level [ %xp4levelup Xp For Levelup]
+┃ *_Xp_*: %exp / %maxexp
+┃ *_Total Xp_*: %totalexp
+┃
+╰──────────────────⦿
+╭──────────────────⦿
+┃   🔰〘 𝑰𝑵𝑭𝑶 𝑪𝑴𝑫 〙🔰
+╰┬─────────────────⦿
+┌┤ 
+┃ *_%totalfeatures_* Commands
+╰──────────────────⦿
 
-var handler = async (m, { conn, command, args, text, usedPrefix }) => {
 
-if (!text) return conn.reply(m.chat, `🎌 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} New West - Those Eyes`,  m, fake, )
-m.react(rwait)
-
-try {
-
-const yt_play = await search(args.join(' '))
-let additionalText = ''
-if (command === 'play') {
-additionalText = 'audio'
-} else if (command === 'play2') {
-additionalText = 'video'}
-
-let texto1 = `*∘ Título*
-${yt_play[0].title}
-
-*∘ Duración* 
-${secondString(yt_play[0].duration.seconds)}
-
-*∘ Autor*
-${yt_play[0].author.name}
-
-*∘ Canal*
-${yt_play[0].author.url}
-
-*∘ Enlace*
-${yt_play[0].url}
-
-*Enviando ${additionalText}*
-⏰ Espere un momento`.trim()
-await conn.sendMessage(m.chat, { text: texto1, contextInfo: { externalAdReply: { title: yt_play[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
-
-if (command == 'play') {	
-try {
-let q = '128kbps'
-let v = yt_play[0].url
-const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v))
-const dl_url = await yt.audio[q].download()
-const ttl = await yt.title
-const size = await yt.audio[q].fileSizeH
-await conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: { title: ttl, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })   
-} catch {
-
-try {
-
-const dataRE = await fetch(`https://api.akuari.my.id/downloader/youtube?link=${yt_play[0].url}`)
-const dataRET = await dataRE.json()
-await conn.sendMessage(m.chat, { audio: { url: dataRET.mp3[1].url }, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: { title: yt_play[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
-m.react(done) 
-} catch {
-
-try {
-
-let humanLol = await fetch(`https://api.lolhuman.xyz/api/ytplay?apikey=${lolkeysapi}&query=${yt_play[0].title}`)
-let humanRET = await humanLol.json()
-await conn.sendMessage(m.chat, { audio: { url: humanRET.result.audio.link }, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: {title: yt_play[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
-m.react(done)      
-} catch {
+ `.trimStart(),
+ header: "┌─⦿『 *_%category_* 』⦿",
+ body: "┃⬡▸ %cmd %isPremium %islimit",
+ footer: "╰─────────────────⦿",
+ after: "\n%me",
+ }
+ let handler = async (m, {
+  conn,
+  usedPrefix: _p,
+  __dirname,
+  args
+ }) => {
+  await conn.sendMessage(m.chat, {
+   react: {
+ text: "⏳",
+ key: m.key,
+   }
+  })
+  
+  let tags = {}
+  
+  try {
+  
+   /* Info Menu */
+   let glb = global.db.data.users
+   let usrs = glb[m.sender]
+   let tag = `@${m.sender.split("@")[0]}`
+   let mode = process.env.MODE || (global.opts["self"] ? "Private" : "Public");
+   let _package = JSON.parse(await promises.readFile(join(__dirname, "../package.json")).catch(_ => ({}))) || {}
+   let {
+ age,
+ exp,
+ limit,
+ level,
+ role,
+ registered,
+ credit
+   } = glb[m.sender]
+   let {
+ min,
+ xp,
+ max
+   } = xpRange(level, global.multiplier)
+   let name = await conn.getName(m.sender)
+   let premium = glb[m.sender].premiumTime
+   let prems = `${premium > 0 ? "Premium": "Free"}`
+   let platform = os.platform()
+ 
+ 
+   let ucpn = `${ucapan()}`
+  
+   let _uptime = process.uptime() * 1000
+   let _muptime
+   if (process.send) {
+ process.send("uptime")
+ _muptime = await new Promise(resolve => {
+  process.once("message", resolve)
+  setTimeout(resolve, 1000)
+ }) * 1000
+   }
+   let muptime = clockString(_muptime)
+   let uptime = clockString(_uptime)
+ 
    
-try {
+   let totalfeatures = Object.values(global.plugins).filter((v) => v.help && v.tags).length;
+   let totalreg = Object.keys(glb).length
+   let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
+ return {
+  help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
+  tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
+  prefix: "customPrefix" in plugin,
+  limit: plugin.limit,
+  premium: plugin.premium,
+  enabled: !plugin.disabled,
+ }
+   })
+   for (let plugin of help)
+ if (plugin && "tags" in plugin)
+  for (let tag of plugin.tags)
+   if (!(tag in tags) && tag) tags[tag] = tag
+   conn.menu = conn.menu ? conn.menu : {}
+   let before = conn.menu.before || defaultMenu.before
+   let header = conn.menu.header || defaultMenu.header
+   let body = conn.menu.body || defaultMenu.body
+   let footer = conn.menu.footer || defaultMenu.footer
+   let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? "" : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+   let _text = [
+ before,
+ ...Object.keys(tags).map(tag => {
+  return header.replace(/%category/g, tags[tag]) + "\n" + [
+   ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
+ return menu.help.map(help => {
+  return body.replace(/%cmd/g, menu.prefix ? help : "%_p" + help)
+   .replace(/%islimit/g, menu.limit ? "Ⓛ" : "")
+   .replace(/%isPremium/g, menu.premium ? "🅟" : "")
+   .trim()
+ }).join("\n")
+   }),
+   footer
+  ].join("\n")
+ }),
+ after
+   ].join("\n")
+   let text = typeof conn.menu == "string" ? conn.menu : typeof conn.menu == "object" ? _text : ""
+   let replace = {
+ "%": "%",
+ p: _p,
+ uptime,
+ muptime,
+ me: conn.getName(conn.user.jid),
+ npmname: _package.name,
+ npmdesc: _package.description,
+ version: _package.version,
+ exp: exp - min,
+ maxexp: xp,
+ totalexp: exp,
+ xp4levelup: max - exp,
+ github: _package.homepage ? _package.homepage.url || _package.homepage : "[unknown github url]",
+ tag,
+ ucpn,
+ platform,
+ mode,
+ _p,
+ credit,
+ age,
+ tag,
+ name,
+ prems,
+ level,
+ limit,
+ name,
+ totalreg,
+ totalfeatures,
+ role,
+ readmore: readMore
+   }
+   text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, "g"), (_, name) => "" + replace[name])
+   const pp = './Assets/XLICON-V2.jpg'
+  
+ 
+ let contact = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
+ 
+  conn.sendMessage(m.chat, { video: { url: menuvid }, caption: text.trim(),  gifPlayback: true,
+  gifAttribution: 0}, { quoted: contact })
 
-let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${lolkeysapi}&url=${yt_play[0].url}`)    
-let lolh = await lolhuman.json()
-let n = lolh.result.title || 'error'
-m.react(done)
-await conn.sendMessage(m.chat, { audio: { url: lolh.result.link}, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: { title: n, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })   
-} catch {
+  } catch (e) {
+   await conn.reply(m.chat, " error", m)
+   throw e
+  }
+ }
+ handler.command = /^(menu|help|\?)$/i
+ 
 
-try {
-
-let searchh = await yts(yt_play[0].url)
-let __res = searchh.all.map(v => v).filter(v => v.type == "video")
-let infoo = await ytdl.getInfo('https://youtu.be/' + __res[0].videoId)
-let ress = await ytdl.chooseFormat(infoo.formats, { filter: 'audioonly' })
-m.react(done)
-await conn.sendMessage(m.chat, { audio: { url: ress.url }, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: { title: __res[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })   
-
-} catch {
-}}}}}
-} if (command == 'play2') {
-try {
-let qu = '360'
-let q = qu + 'p'
-let v = yt_play[0].url
-const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v))
-const dl_url = await yt.video[q].download()
-const ttl = await yt.title
-const size = await yt.video[q].fileSizeH
-m.react(done)
-await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `*Título*: ${ttl}\n*Peso:* ${size}`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
-} catch {
-
-try {
-
-let mediaa = await ytMp4(yt_play[0].url)
-m.react(done)
-await conn.sendMessage(m.chat, { video: { url: mediaa.result }, fileName: `error.mp4`, caption: cred.toString('utf-8'), thumbnail: mediaa.thumb, mimetype: 'video/mp4' }, { quoted: m })     
-} catch {
-
-try {
-
-let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${lolkeysapi}&url=${yt_play[0].url}`)    
-let lolh = await lolhuman.json()
-let n = lolh.result.title || 'error'
-let n2 = lolh.result.link
-let n3 = lolh.result.size
-let n4 = lolh.result.thumbnail
-await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `*Titulo:* ${n}\n*Peso:* ${n3}`, thumbnail: await fetch(n4) }, { quoted: m })
-} catch {
-m.react(error)
-await conn.reply(m.chat, '🚩 *Ocurrió un fallo*', m, fake, ) }}}    
-}} catch {
-m.react(error)
-return conn.reply(m.chat, '🚩 *Inténtelo de nuevo*', m, fake, )}
-
-}
-handler.help = ['play', 'play2']
-handler.tags = ['قائمة الأغاني والفيديوهات']
-handler.command = /^play2?$/i
-
-handler.register = true
-handler.limit = true
-
-export default handler
-
-async function search(query, options = {}) {
-const search = await yts.search({ query, hl: 'es', gl: 'ES', ...options })
-return search.videos}
-
-function MilesNumber(number) {
-const exp = /(\d)(?=(\d{3})+(?!\d))/g
-const rep = '$1.'
-let arr = number.toString().split(".")
-arr[0] = arr[0].replace(exp, rep)
-return arr[1] ? arr.join('.') : arr[0]}
-
-function secondString(seconds) {
-seconds = Number(seconds)
-var d = Math.floor(seconds / (3600 * 24))
-var h = Math.floor((seconds % (3600 * 24)) / 3600)
-var m = Math.floor((seconds % 3600) / 60)
-var s = Math.floor(seconds % 60)
-var dDisplay = d > 0 ? d + (d == 1 ? ' día, ' : ' días, ') : ''
-var hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " horas, ") : ''
-var mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " minutos, ") : ''
-var sDisplay = s > 0 ? s + (s == 1 ? ' segundo' : ' segundos') : ''
-return dDisplay + hDisplay + mDisplay + sDisplay}
-
-function bytesToSize(bytes) {
-return new Promise((resolve, reject) => {
-const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
-if (bytes === 0) return 'n/a'
-const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10)
-if (i === 0) resolve(`${bytes} ${sizes[i]}`);
-resolve(`${(bytes / (1024 ** i)).toFixed(1)} ${sizes[i]}`)})}
-
-async function ytMp3(url) {
-return new Promise((resolve, reject) => {
-ytdl.getInfo(url).then(async(getUrl) => {
-let result = []
-for(let i = 0; i < getUrl.formats.length; i++) {
-let item = getUrl.formats[i]
-if (item.mimeType == 'audio/webm; codecs=\"opus\"') {
-let { contentLength } = item
-let bytes = await bytesToSize(contentLength)
-result[i] = { audio: item.url, size: bytes }}}
-let resultFix = result.filter(x => x.audio != undefined && x.size != undefined) 
-let tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].audio}`)
-let tinyUrl = tiny.data;
-let title = getUrl.videoDetails.title;
-let thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url
-resolve({ title, result: tinyUrl, result2: resultFix, thumb })}).catch(reject)})}
-
-async function ytMp4(url) {
-return new Promise(async(resolve, reject) => {
-ytdl.getInfo(url).then(async(getUrl) => {
-let result = []
-for(let i = 0; i < getUrl.formats.length; i++) {
-let item = getUrl.formats[i]
-if (item.container == 'mp4' && item.hasVideo == true && item.hasAudio == true) {
-let { qualityLabel, contentLength } = item
-let bytes = await bytesToSize(contentLength)
-result[i] = { video: item.url, quality: qualityLabel, size: bytes }}}
-let resultFix = result.filter(x => x.video != undefined && x.size != undefined && x.quality != undefined) 
-let tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].video}`)
-let tinyUrl = tiny.data
-let title = getUrl.videoDetails.title
-let thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url
-resolve({ title, result: tinyUrl, rersult2: resultFix[0].video, thumb })}).catch(reject)})}
-
-async function ytPlay(query) {
-return new Promise((resolve, reject) => {
-yts(query).then(async(getData) => {
-let result = getData.videos.slice( 0, 5 )
-let url = []
-for (let i = 0; i < result.length; i++) { url.push(result[i].url) }
-let random = url[0]
-let getAudio = await ytMp3(random)
-resolve(getAudio)}).catch(reject)})}
-
-async function ytPlayVid(query) {
-return new Promise((resolve, reject) => {
-yts(query).then(async(getData) => {
-let result = getData.videos.slice( 0, 5 )
-let url = []
-for (let i = 0; i < result.length; i++) { url.push(result[i].url) }
-let random = url[0]
-let getVideo = await ytMp4(random)
-resolve(getVideo)}).catch(reject)})}
+ 
+ export default handler
+ 
+ 
+ function pickRandom(list) {
+  return list[Math.floor(Math.random() * list.length)]
+ }
+ 
+ const more = String.fromCharCode(8206)
+ const readMore = more.repeat(4001)
+ 
+ function clockString(ms) {
+  let h = isNaN(ms) ? "--" : Math.floor(ms / 3600000)
+  let m = isNaN(ms) ? "--" : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? "--" : Math.floor(ms / 1000) % 60
+  return [h, " H ", m, " M ", s, " S "].map(v => v.toString().padStart(2, 0)).join("")
+ }
+ 
+ function clockStringP(ms) {
+  let ye = isNaN(ms) ? "--" : Math.floor(ms / 31104000000) % 10
+  let mo = isNaN(ms) ? "--" : Math.floor(ms / 2592000000) % 12
+  let d = isNaN(ms) ? "--" : Math.floor(ms / 86400000) % 30
+  let h = isNaN(ms) ? "--" : Math.floor(ms / 3600000) % 24
+  let m = isNaN(ms) ? "--" : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? "--" : Math.floor(ms / 1000) % 60
+  return [ye, " *Years 🗓️*\n", mo, " *Month 🌙*\n", d, " *Days ☀️*\n", h, " *Hours 🕐*\n", m, " *Minute ⏰*\n", s, " *Second ⏱️*"].map(v => v.toString().padStart(2, 0)).join("")
+ }
+ 
+ function ucapan() {
+  const time = moment.tz("Asia/Kolkata").format("HH")
+  let res = "Good morning ☀️"
+  if (time >= 4) {
+   res = "Good Morning 🌄"
+  }
+  if (time >= 10) {
+   res = "Good Afternoon ☀️"
+  }
+  if (time >= 15) {
+   res = "Good Afternoon 🌇"
+  }
+  if (time >= 18) {
+   res = "Good Night 🌙"
+  }
+  return res
+ }
