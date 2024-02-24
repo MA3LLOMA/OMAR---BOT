@@ -26,7 +26,7 @@ let handler = async (m, {
         of medias) await conn.sendFile(m.chat, await (await fetch(url)).arrayBuffer(), '', `*AIOVIDEO DOWNLOADER*\n\n${title ? `*Title:* ${title}` : "NotFound"}\n*💽Format:* ${quality ? `${quality}` : "Unknown"}\n*📨Size:* ${formattedSize ? `${formattedSize}` : "countless" }\n`, m)
 }
 handler.help = ['aiovideo2'].map(v => v + ' <url>')
-handler.tags = ['downloader']
+handler.tags = ['قائمة الأغاني والفيديوهات']
 
 handler.command = /^(aio(video2)?(dl2)?)$/i
 
