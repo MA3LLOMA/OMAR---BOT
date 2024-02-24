@@ -47,7 +47,7 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
 };
 
 handler.help = ['story'].map(v => v + ' <story_url or username>');
-handler.tags = ['downloader'];
+handler.tags = ['قائمة التحميل'];
 handler.command = /^story$/i;
 
 export default handler;
