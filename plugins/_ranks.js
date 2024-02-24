@@ -1,4 +1,4 @@
-global.rpg = {
+//global.rpg = {
   role(level) {
     level = parseInt(level);
     if (isNaN(level)) return { name: "", level: "" };
