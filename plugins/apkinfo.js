@@ -47,5 +47,5 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   );
 };
 handler.command = /^(apk(info|detail))$/i;
-
+handler.tags = ['قائمة التطبيقات'];
 export default handler;
