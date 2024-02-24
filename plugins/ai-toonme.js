@@ -5,17 +5,17 @@ let handler = async (m, {
     args,
     usedPrefix
 }) => {
-    if (!args[0]) throw `Input *URL*\nklo mau pake gambar jadiin url dulu pake ${usedPrefix}tourl :v`
+    if (!args[0]) throw `خطأ`
     let xyz = "&apikey=wudysoft"
     let response = await axios.get('https://xzn.wtf/api/aitoonme?url=' + args[0] + xyz)
     let imageURL = response.data.url
 
-    await m.reply('Sedang diproses...')
+    await m.reply(wait)
     await conn.sendFile(m.chat, imageURL, '', wm, m)
 }
 
 handler.help = ['aitoonme']
-handler.tags = ['drawing']
+handler.tags = ['قائمة توليد الصور']
 handler.command = /^(aitoonme|tnm)$/i
 handler.limit = true
 
