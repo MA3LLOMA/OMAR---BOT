@@ -18,7 +18,7 @@ let handler = async (m, {
 
 }
 handler.help = ["ai3"]
-handler.tags = ["ai"];
+handler.tags = ["قائمة الدكاء الإصطناعي"];
 handler.command = /^(ai3)$/i
 export default handler
 
