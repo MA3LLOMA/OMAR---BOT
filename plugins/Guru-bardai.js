@@ -43,7 +43,7 @@ let handler = async (message, {
 };
 
 handler.help = ["bard"];
-handler.tags = ['أوامر توليد الصور'];
+handler.tags = ['قائمة توليد الصور'];
 handler.command = /^(bard)$/i;
 export default handler;
 
