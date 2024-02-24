@@ -20,7 +20,7 @@ let handler = async (m, { conn }) => {
 
 handler.help = ['blackpink']
 
-handler.tags = ['أوامر الصور']
+handler.tags = ['قائمة الصور']
 
 handler.limit = false
 
