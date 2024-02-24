@@ -1,6 +1,6 @@
 
 let handler  = async (m, { conn, args, text }) => {
-if (!text) throw `*ENTER THE NAME YOU WANT TO BE THE NEW GROUP NAME*`
+if (!text) throw `*قم بكتابة إسم المجمعة الجديد \n exmaple : .gename معلومة*`
 try {
 let text = args.join` `
 if(!args || !args[0]) {
