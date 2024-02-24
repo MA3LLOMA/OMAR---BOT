@@ -43,7 +43,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   m.react('☺️'); 
 }
 
-handler.tags = ['قائمة الفنون'];
+handler.tags = ['قائمة الأنمي والكرتون'];
 handler.help = [
   'bully @tag',
   'cuddle @tag',
