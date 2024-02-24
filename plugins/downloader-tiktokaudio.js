@@ -76,7 +76,7 @@ ${spas}*[ A U D I O ]*
         })
     }
 }
-handler.tags = ['downloader']
+handler.tags = ['قائمة التحميل']
 handler.command = /^(tiktokaudio)$/i
 
 handler.limit = true
