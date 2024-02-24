@@ -15,7 +15,7 @@ if (!text) throw `مثال : \n ${usedPrefix + command} berkane`
         }
 }
 handler.help = ['adhan']
-handler.tags = ['islam']
+handler.tags = ['قائمة الإسلام']
 handler.command = /^(adhan)$/i
 export default handler
 
