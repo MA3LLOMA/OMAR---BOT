@@ -23,7 +23,7 @@ let handler = async (m, { conn, text }) => {
 }
 
 handler.help = ['addxp <@user>']
-handler.tags = ['economy']
+handler.tags = ['قائمة الأداوات']
 handler.command = ['addxp'] 
 handler.rowner = true
 
