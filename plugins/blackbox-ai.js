@@ -30,7 +30,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 };
 
 handler.help = ['blackbox'];
-handler.tags = ['ai'];
+handler.tags = ['قائمة الدكاء الإصطناعي'];
 handler.command = ['blackbox', 'bb'];
 
 export default handler;
