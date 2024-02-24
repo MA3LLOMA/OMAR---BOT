@@ -29,7 +29,7 @@ let handler = async (m, { conn, command, text, usedPrefix, participants }) => {
     
 }
 handler.help = ["character @tag"]
-handler.tags = ['fun']
+handler.tags = ['قائمة الترفيه']
 handler.command = /^(character)/i
 
 export default handler 
