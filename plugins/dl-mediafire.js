@@ -30,7 +30,7 @@ ${isLimit ? `\n▢ The file exceeds the download limit *+${limit} MB*\nUpgrade t
     m.react(done)
 }
 handler.help = ['mediafire <url>']
-handler.tags = ['downloader', 'premium']
+handler.tags = ['قائمة التحميل', 'premium']
 handler.command = ['mediafire', 'mfire'] 
 handler.credit = true
 handler.premium = false
