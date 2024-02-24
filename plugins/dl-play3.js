@@ -100,9 +100,9 @@ handler.before = async (m, {
     }
 };
 
-handler.help = ["play3"];
-handler.tags = ["downloader"];
-handler.command = /^(play3)$/i;
+handler.help = ["play"];
+handler.tags = ["قائمة الأغاني والفيديوهات"];
+handler.command = /^(play)$/i;
 handler.limit = true;
 export default handler;
 
