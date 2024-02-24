@@ -32,6 +32,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 };
 
 handler.help = ['dalle'];
-handler.tags = ['drawing'];
+handler.tags = ['قائمة توليد الصور'];
 handler.command = ['imagine'];
 export default handler;
