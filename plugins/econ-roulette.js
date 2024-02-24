@@ -26,7 +26,7 @@ let handler = async (m, { conn, args, text, usedPrefix , command }) => {
     m.reply(result)
 }
 handler.help = ['roulette <amount> <color(red/black)>']
-handler.tags = ['economy']
+handler.tags = ['قائمة الأداوات']
 handler.command = ['roulette', 'rt']
 
 handler.group = true
