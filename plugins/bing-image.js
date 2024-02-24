@@ -77,7 +77,7 @@ const handler = async (m, {
 };
 
 handler.help = ["bingimg3 *[query]*"];
-handler.tags = ["ai"];
+handler.tags = ["قائمة توليد الصور"];
 handler.command = /^(bingimg3)$/i;
 export default handler;
 
