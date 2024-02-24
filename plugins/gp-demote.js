@@ -25,7 +25,7 @@ m.reply(`✅ User demoted`)
 
 }
 handler.help = ['demote (@tag)']
-handler.tags = ['group']
+handler.tags = ['قائمة المجموعات']
 handler.command = ['demote', 'degradar'] 
 handler.group = true
 handler.admin = true
