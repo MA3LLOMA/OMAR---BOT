@@ -15,6 +15,6 @@ ${json.result.data.translation.id}
 }
 
 handler.help = ['alquran *114 1*']
-handler.tags = ['quran']
+handler.tags = ['قائمة الإسلام']
 handler.command = /^(al)?quran$/i
 module.exports = handler
