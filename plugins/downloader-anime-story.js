@@ -30,7 +30,7 @@ let handler = async (m, {
     }
 }
 handler.help = ["animevideo"]
-handler.tags = ["internet"]
+handler.tags = ["قائمة الأنمي والكرتون"]
 handler.command = /^(animevideo)$/i
 export default handler
 
