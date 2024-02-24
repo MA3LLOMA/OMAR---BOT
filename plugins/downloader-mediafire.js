@@ -234,7 +234,7 @@ ${wait}
     }
 };
 handler.help = ["mediafire"];
-handler.tags = ["downloader"];
+handler.tags = ["قائمة التحميل"];
 handler.command = /^m(ediafire(d(own(load(er)?)?|l))?|f(d(own(load(er)?)?|l))?)$/i;
 handler.limit = true;
 export default handler;
