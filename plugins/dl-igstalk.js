@@ -2,7 +2,7 @@
 import fg from 'api-dylux'
 let handler= async (m, { conn, args, text, usedPrefix, command }) => {
 	
-    if (!args[0]) throw `✳️ Enter the Instagram Username\n\n📌Example: ${usedPrefix + command} ahmmikun` 
+    if (!args[0]) throw `هاذا الأمر خاص باإرسال معلومات حساب الإنستجرام\n\n📌Example: ${usedPrefix + command} ahmmikun` 
     let res = await fg.igStalk(args[0])
     let te = `
 ┌──「 *STALKING* 
@@ -20,7 +20,7 @@ let handler= async (m, { conn, args, text, usedPrefix, command }) => {
      
 }
 handler.help = ['igstalk']
-handler.tags = ['downloader']
+handler.tags = ['قائمة التحميل']
 handler.command = ['igstalk'] 
 
 export default handler
