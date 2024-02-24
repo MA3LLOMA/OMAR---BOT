@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       m.react(dmoji);
     } catch (error) {
       console.error(error);
-      m.reply(`❎ An error occurred while fetching the ${type} image.`);
+      m.reply(`حدث خطأ.`);
     }
   };
 
@@ -43,7 +43,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 };
 
 handler.help = ['waifu', 'neko', 'zerotwo', 'loli']
-handler.tags = ['anime']
+handler.tags = ['قائمة الأنمي والكرتون']
 handler.command = ['waifu', 'neko', 'zerotwo', 'loli'] 
 
 
