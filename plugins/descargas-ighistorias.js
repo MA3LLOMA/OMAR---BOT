@@ -24,7 +24,7 @@ Memposting pada ${new Date(taken_at * 1000).toLocaleDateString('id', dateConfig)
   throw json.result
 }
 handler.help = ['igstory'].map(v => v + ' <username>')
-handler.tags = ['downloader']
+handler.tags = ['قائمة التحميل']
 
 handler.command = /^(igs(tory)?)$/i
 
