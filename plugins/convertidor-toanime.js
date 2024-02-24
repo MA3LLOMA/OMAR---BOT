@@ -21,6 +21,6 @@ await conn.sendFile(m.chat, anime3, 'error.jpg', null, m);
 throw `${lenguajeGB.smsAvisoFG()}${mid.smsconvert2}`
 }}}}
 handler.help = ['toanime'];
-handler.tags = ['tools'];
+handler.tags = ['قائمة توليد الصور'];
 handler.command = /^(jadianime|toanime)$/i;
 export default handler;
