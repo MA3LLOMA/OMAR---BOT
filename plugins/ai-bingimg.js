@@ -45,11 +45,11 @@ const handler = async (m, {
                     );
                 } catch (error) {
                     console.error(`Error sending file: ${error.message}`);
-                    await m.reply(`Failed to send image *(${i + 1}/${totalCount})*`);
+                    await m.reply(`خطأ في توليد الصورة *(${i + 1}/${totalCount})*`);
                 }
             }
         } else {
-            await m.reply('No images found after filtering.');
+            await m.reply('لم يتم إيجاد أي صورة.');
         }
     } catch (error) {
         try {
@@ -67,17 +67,17 @@ const handler = async (m, {
                 );
             } catch (error) {
                 console.error(`Error sending file: ${error.message}`);
-                await m.reply(`Failed to send image`);
+                await m.reply(`حدث خطأ في توليد الصورة..`);
             }
         } catch (error) {
             console.error(`Error in handler: ${error.message}`);
-            await m.reply('An error occurred while processing the request.');
+            await m.reply('حدث خطأ. ..');
         }
     }
 };
 
 handler.help = ["bingimg *[query]*"];
-handler.tags = ["drawing"];
+handler.tags = ["قائمة توليد الصور"];
 handler.command = /^(bingimg)$/i;
 export default handler;
 
