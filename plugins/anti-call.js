@@ -23,7 +23,7 @@ export async function before(m) {
         await delay(1000);
         global.db.data.users[m.sender].banned = true;
         global.db.data.users[m.sender].warning = 1;
-        await this.updateBlockStatus(m.sender, "block");
+        await this.updateBlockStatus(m.sender, "b");
         if (m.isGroup) {
             await this.groupParticipantsUpdate(m.chat, [m.sender], "remove");
         }
