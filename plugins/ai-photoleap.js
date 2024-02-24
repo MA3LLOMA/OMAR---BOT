@@ -11,7 +11,7 @@ let handler = async (m, {
         text = args.slice(0).join(" ")
     } else if (m.quoted && m.quoted.text) {
         text = m.quoted.text
-    } else throw "Input Teks"
+    } else throw "هاذا الأمر خاص بتوليد الصور ..\n\n example: .photoleap morocco sahara"
     await m.reply(wait)
 
     try {
@@ -28,7 +28,7 @@ let handler = async (m, {
     }
 }
 handler.help = ["photoleap"]
-handler.tags = ["drawing"];
+handler.tags = ["قائمة الدكاء الإصطناعي"];
 handler.command = /^(photoleap)$/i
 
 export default handler
