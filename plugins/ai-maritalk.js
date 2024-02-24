@@ -21,7 +21,7 @@ let handler = async (m, {
     }
 };
 handler.help = ["maritalk"];
-handler.tags = ["ai"];
+handler.tags = ["قائمة الدكاء الإصناعي"];
 handler.command = /^(maritalk)$/i;
 
 export default handler;
