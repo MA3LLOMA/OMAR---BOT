@@ -80,7 +80,7 @@ let handler = async (m, {
     }
 }
 handler.help = ["controlnet *[nomor]|[query]*"]
-handler.tags = ["ai"]
+handler.tags = ["قائمة توليد الصور"]
 handler.command = /^(controlnet)$/i
 export default handler
 
