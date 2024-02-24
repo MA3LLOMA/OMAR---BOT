@@ -21,7 +21,7 @@ let handler = async (m, { conn, text }) => {
 }
 
 handler.help = ['addgold <@user>']
-handler.tags = ['economy']
+handler.tags = ['قائمة الأداوات']
 handler.command = ['addgold'] 
 handler.rowner = true
 
