@@ -3,7 +3,7 @@ import fetch from "node-fetch"
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let wm = global.wm
 
-    if (!text) throw `This command generates image from texts\n\n Example usage\n${usedPrefix + command} girl big oppai, hair cut collor red, full body, bokeh`
+    if (!text) throw `هاذا الأمر يقوم بتوليد صور أنمي بالكتابة فقط \n\n example: .animediff girl with cat`
     await m.reply(wait)
 
     await conn.relayMessage(m.chat, { reactionMessage: { key: m.key, text: '👌' } }, { messageId: m.key.id })
@@ -20,7 +20,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 }
 
 handler.help = ['animediff <prompt>']
-handler.tags = ['drawing']
+handler.tags = ['قائمة توليد الصور']
 handler.command = /^(animediff)$/i
 
 handler.premium = false
