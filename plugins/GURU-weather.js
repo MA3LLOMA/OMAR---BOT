@@ -12,10 +12,10 @@ const Minimum_Temperature = res.data.main.temp_min + "°C"
 const Maximum_Temperature = res.data.main.temp_max + "°C"
 const Humidity = res.data.main.humidity + "%"
 const Wind = res.data.wind.speed + "km/h"
-const wea = `「 📍 」PLACE: ${name}\n「 🗺️ 」COUNTRY: ${Country}\n「 🌤️ 」VIEW: ${Weather}\n「 🌡️ 」TEMPERATURE: ${Temperature}\n「 💠 」 MINIMUM TEMPERATURE: ${Minimum_Temperature}\n「 📛 」 MAXIMUM TEMPERATURE: ${Maximum_Temperature}\n「 💦 」HUMIDITY: ${Humidity}\n「 🌬️ 」 WINDSPEED: ${Wind}`
+const wea = `هاذا الأمر خاص بالطقس يعلمك ماهو الطقس الخاص بلبدك \n\n example: \n .weather morocco`
 m.reply(wea)
 } catch {
-return "*ERROR*"}}
+return "*حدث خطأ..*"}}
 handler.help = ['weather *<place>*']
 handler.tags = ['قائمة الأداوات']
 handler.command = /^(climate|weather)$/i
