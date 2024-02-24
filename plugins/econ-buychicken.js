@@ -13,7 +13,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
 }
 
 handler.help = ['buych']
-handler.tags = ['economy']
+handler.tags = ['قائمة الأداوات']
 handler.command = ['buy-chicken', 'buych'] 
 
 handler.group = true
