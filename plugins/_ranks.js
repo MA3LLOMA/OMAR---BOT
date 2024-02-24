@@ -1,5 +1,5 @@
 //global.rpg = {
-  role(level) {
+  //role(level) {
     level = parseInt(level);
     if (isNaN(level)) return { name: "", level: "" };
 
