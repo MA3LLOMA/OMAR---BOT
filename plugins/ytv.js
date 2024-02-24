@@ -109,7 +109,7 @@ let handler = async (m, {
 
 }
 handler.help = ["mp4", "v", ""].map(v => "yt" + v + ` <url> <without message>`)
-handler.tags = ["downloader"]
+handler.tags = ["قائمة الأغاني والفيديوهات"]
 handler.command = /^y(outube(mp4|vdl)|t((mp4|v)|vdl))$/i
 
 handler.exp = 0
