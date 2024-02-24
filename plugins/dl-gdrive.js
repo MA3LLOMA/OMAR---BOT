@@ -20,9 +20,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }
 }
 handler.help = ['gdrive']
-handler.tags = ['downloader']
+handler.tags = ['قائمة التحميل']
 handler.command = ['gdrive']
-handler.credit = true
+handler.credit = false
 handler.premium = false
 
 export default handler
