@@ -17,7 +17,7 @@ m.react(done)
 	
 }
 handler.help = ['twitter'].map(v => v + ' <url>')
-handler.tags = ['downloader']
+handler.tags = ['قائمة التحميل']
 handler.command = /^(twitter|tw)$/i
 handler.diamond = true
 
