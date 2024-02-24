@@ -4,7 +4,7 @@ import fg from 'api-dylux'
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
-    throw `✳️ Please send the link of a Facebook video\n\n📌 EXAMPLE :\n*${usedPrefix + command}* https://www.facebook.com/Ankursajiyaan/videos/981948876160874/?mibextid=rS40aB7S9Ucbxw6v`;
+    throw `قم باإرسال رابط فيديو فيسبوك\n\n📌 EXAMPLE :\n*${usedPrefix + command}* https://www.facebook.com/Ankursajiyaan/videos/981948876160874/?mibextid=rS40aB7S9Ucbxw6v`;
   }
 
   const urlRegex = /^(?:https?:\/\/)?(?:www\.)?(?:facebook\.com|fb\.watch)\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i;
@@ -30,7 +30,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
 }
 
 handler.help = ['facebook2 <url>']
-handler.tags = ['downloader']
+handler.tags = ['قائمة التحميل']
 handler.command = /^((facebook2|fb2)(downloder|dl2)?)$/i
 
 export default handler
