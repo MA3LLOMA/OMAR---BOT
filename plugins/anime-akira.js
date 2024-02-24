@@ -16,12 +16,12 @@ let handler = async (m, { conn }) => {
     conn.sendFile(m.chat, randomImageUrl, 'akira.jpg', 'Here is a random Akira image!');
   } catch (e) {
     console.error(e);
-    m.reply('⛔ *An error occurred while fetching Akira images.*');
+    m.reply('حدث خطأ');
   }
 };
 
 handler.help = ['akira'];
-handler.tags = ['anime'];
+handler.tags = ['قائمة الأنمي والكرتون'];
 handler.command = ['akira'];
 
 export default handler;
