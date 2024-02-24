@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     m.reply(txt)
     }
     handler.help = ['nowa']
-handler.tags = ['tools']
+handler.tags = ['قائمة الأداوات']
     handler.command = /^nowa$/i
     export default handler
     function formatDate(n, locale = 'in') {
