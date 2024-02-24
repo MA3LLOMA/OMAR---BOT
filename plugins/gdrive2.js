@@ -26,7 +26,7 @@ let handler = async (m, { conn, args }) => {
 }
 
 handler.help = ['gdrive2']
-handler.tags = ['downloader']
+handler.tags = ['قائمة التحميل']
 handler.command = /^(gdrive2)$/i
 
 
