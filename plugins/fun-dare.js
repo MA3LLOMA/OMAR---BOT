@@ -9,7 +9,7 @@ let handler  = async (m, { conn }) => {
   conn.sendMessage(m.chat, { text: guru, mentions: [m.sender] }, { quoted: m })
 }
 handler.help = ['dare']
-handler.tags = ['fun']
+handler.tags = ['قائمة الترفيه']
 handler.command = /^(dare)$/i
 
 export default handler
