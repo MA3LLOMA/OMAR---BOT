@@ -1,9 +1,9 @@
 //global.rpg = {
   //role(level) {
-    level = parseInt(level);
-    if (isNaN(level)) return { name: "", level: "" };
+    //level = parseInt(level);
+    //if (isNaN(level)) return { name: "", level: "" };
 
-    const role = [
+    //const role = [
       { name: "Beginner", level: 0 },
       { name: "Lobster Larva", level: 5 }, //»»————⍟——««\n
       { name: "Octopus Apprentice", level: 10 },
