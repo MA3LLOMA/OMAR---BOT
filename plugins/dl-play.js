@@ -122,7 +122,7 @@ return conn.reply(m.chat, '🚩 *Inténtelo de nuevo*', m, fake, )}
 
 }
 handler.help = ['play', 'play2']
-handler.tags = ['descargas']
+handler.tags = ['قائمة الأغاني والفيديوهات']
 handler.command = /^play2?$/i
 
 handler.register = true
