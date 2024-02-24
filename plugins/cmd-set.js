@@ -1,6 +1,6 @@
 //import db from '../lib/database.js'
 
-let handler = async (m, { text, usedPrefix, command }) => {
+//let handler = async (m, { text, usedPrefix, command }) => {
     global.db.data.sticker = global.db.data.sticker || {}
     if (!m.quoted) throw `✳️Reply to a message with *${usedPrefix + command}*`
     if (!m.quoted.fileSha256) throw '⚠️ Mention the message'
