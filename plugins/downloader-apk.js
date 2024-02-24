@@ -30,7 +30,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 };
 
 handler.help = ['apkdl']
-handler.tags = ['downloader']
+handler.tags = ['قائمة الأغاني والفيديوهات']
 handler.command = /^(apkdl|downloadapk|apkdownload)$/i
 
 export default handler;
