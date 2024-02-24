@@ -18,7 +18,7 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
 }
 
 handler.help = ['wa'];
-handler.tags = ['tools'];
+handler.tags = ['قائمة الأداوات'];
 handler.command = ['wa'];
 
 export default handler;
