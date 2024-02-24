@@ -15,7 +15,7 @@ let handler = async (m, { conn, command, args }) => {
   } else conn.reply(m.chat, `❎ Sorry, you don't have enough *XP* to buy *${count}* Gold\n\n You can get *XP* using the commands from the *games and economy menu*`, m)
 }
 handler.help = ['buy', 'buyall']
-handler.tags = ['economy']
+handler.tags = ['قائمة الأداوات']
 handler.command = ['buy', 'buyall'] 
 
 handler.disabled = false
