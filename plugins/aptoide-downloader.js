@@ -32,7 +32,7 @@ let handler = async (m, {
     }
 }
 handler.help = ["aptdown"]
-handler.tags = ["tools"]
+handler.tags = ["قائمة التطبيقات"]
 handler.command = /aptdown$/i
 
 export default handler
