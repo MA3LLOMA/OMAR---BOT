@@ -42,7 +42,7 @@ let handler = async (m, { conn }) => {
   }}
 
 handler.help = ['rank'];
-handler.tags = ['economy'];
+handler.tags = ['قائمة الأداوات'];
 handler.command = ['rank'];
 
 export default handler;
