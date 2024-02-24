@@ -20,7 +20,7 @@ let handler = async (m, {
     else throw eror
 }
 handler.help = ['zippyshare'].map(v => v + ' <url>')
-handler.tags = ['downloader']
+handler.tags = ['قائمة التحميل']
 
 handler.command = /^(zippy(share)?(ser)?(sher)?(sare)?)$/i
 
