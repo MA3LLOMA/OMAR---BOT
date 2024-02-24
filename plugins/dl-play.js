@@ -12,70 +12,27 @@ import {
  import os from "os"
  import fs from "fs"
  import fetch from "node-fetch"
- 
+
  const defaultMenu = {
-  before: `
-  「 ${botname} 🎁XMD 」\n
-  *%ucpn*
-⍟────────────────⍟
-*REMEMBER THIS BOT IS FOR*
-*EDUCATIONAL PERPOSES*
-⍟────────────────⍟
-*©Salman Ahmand*
-⍟────────────────⍟
-*_Konnichiwa! Its XLICON-MD A_* 
-*_Multi-Device Whatsapp BOT_*
-*_Recoded By Salman Ahmad And Abraham Dwamena_*
-⍟────────────────⍟
-                                    
- ▀▄▀ █░░ █ █▀▀ █▀█ █▄░█  
- █░█ █▄▄ █ █▄▄ █▄█ █░▀█  
-          
- █▀▄▀█ █▀▄
- █░▀░█ █▄▀
- 
-╭─────────────────⦿
-┃    🔰〘 𝙄𝙉𝙁𝙊 〙🔰
-╰┬────────────────⦿
-┌┤
-┃
-┃ *_Founder_*: Salman Ahmad 
-┃ *_Bot Name_*: ${botname}
-┃ *_Mode_*: %mode
-┃ *_HOST_*: kali Linix
-┃ *_Type_*: NodeJs
-┃ *_Baileys_*: Multi Device
-┃ *_Prefix_*: [ *%_p* ]
-┃ *_Uptime_*: %muptime
-┃ *_Database_*:  %totalreg
-┃
-╰──────────────────⦿
-╭──────────────────⦿
-┃    🔰〘 𝙐𝙎𝙀𝙍 〙🔰
-╰┬─────────────────⦿
-┌┤     
-┃
-┃ *_Name_*: %name
-┃ *_Gold_*: %credit
-┃ *_Role_*: XLICON-MD-TESTER
-┃ *_Level_*: %level [ %xp4levelup Xp For Levelup]
-┃ *_Xp_*: %exp / %maxexp
-┃ *_Total Xp_*: %totalexp
-┃
-╰──────────────────⦿
-╭──────────────────⦿
-┃   🔰〘 𝑰𝑵𝑭𝑶 𝑪𝑴𝑫 〙🔰
-╰┬─────────────────⦿
-┌┤ 
-┃ *_%totalfeatures_* Commands
-╰──────────────────⦿
+  before: `*السلام عليكم 👋🏽*
 
+┌─────────────────⦿
 
+﴿كلّ مَنْ عَلَيْهَا فَانٍ * وَيَبْقَى وَجْه رَبِّكَ ذو الْجَلَالِ وَالْإِكْرَامِ﴾
+
+╰─────────────────⦿
+
+┏━━ salam  *%name*
+👥 *Total user:* %totalreg   
+┗━━━━━━━━━━⬣
+
+%readmore
+𖦹 𝙊 𝙈 𝘼 𝙍 - 𝘽 𝙊 𝙏
  `.trimStart(),
  header: "┌─⦿『 *_%category_* 』⦿",
- body: "┃⬡▸ %cmd %isPremium %islimit",
+ body: "┃ %cmd",
  footer: "╰─────────────────⦿",
- after: "\n%me",
+ after: "By Omar",
  }
  let handler = async (m, {
   conn,
@@ -209,19 +166,25 @@ import {
    }
    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, "g"), (_, name) => "" + replace[name])
    const pp = './Assets/XLICON-V2.jpg'
-  
- 
- let contact = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
- 
-  conn.sendMessage(m.chat, { video: { url: menuvid }, caption: text.trim(),  gifPlayback: true,
-  gifAttribution: 0}, { quoted: contact })
 
+    conn.sendMessage(m.chat, {audio: { url: 'https://files.catbox.moe/5h3ra5.mp3' }, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+ conn.sendMessage(m.chat, {
+text: text,
+contextInfo: {
+externalAdReply: {
+title: 'OMAR BOT',
+body: "عمر بوت في خدمتكم 😻",
+thumbnailUrl: 'https://i.imgur.com/V3H4b3e.jpeg',
+sourceUrl: 'https://chat.whatsapp.com/K6V9If35p3HAWfUjtEECVt',
+mediaType: 1,
+renderLargerThumbnail: true
+}}}, { quoted: m})
   } catch (e) {
    await conn.reply(m.chat, " error", m)
    throw e
   }
  }
- handler.command = /^(menu|help|\?)$/i
+ handler.command = /^(menu|help|omar|list|list2|قائمة|\?)$/i
  
 
  
@@ -268,4 +231,4 @@ import {
    res = "Good Night 🌙"
   }
   return res
- }
+     }
