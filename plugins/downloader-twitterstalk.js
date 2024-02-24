@@ -34,7 +34,7 @@ let handler = async (m, {
     }
 };
 handler.help = ['twitterstalk'];
-handler.tags = ['downloader'];
+handler.tags = ['قائمة البحث'];
 handler.command = /^(twitter|twt)stalk$/i;
 handler.premium = true;
 
