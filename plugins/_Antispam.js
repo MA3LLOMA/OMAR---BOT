@@ -51,7 +51,7 @@ export async function before(m) {
 
             // Notify the sender about the spamming and the remaining cooldown time.
             const message = m.mtype.replace(/message$/i, '').replace('audio', m.msg.ptt ? 'PTT' : 'audio').replace(/^./, v => v.toUpperCase()) || 'Unknown';
-            return m.reply(`❌ *Please do not spam ${message}*\nWait for ${Math.ceil((this.spam[m.sender].lastspam - now) / 1000)} seconds`);
+            return m.reply(`لاتقم باإرسال رسائل كثيرة سوف يتم تلبية طلبك !...`);
         }
     } else {
         // If the time difference is greater than or equal to 10 seconds, reset the sender's spam count.
