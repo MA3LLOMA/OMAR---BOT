@@ -15,9 +15,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
     const result = await fg.fbdl(args[0]);
     const tex = `
-هاذا هو الفيديو الخاص بك
-لاتنسى دعمنا على انستجرام 😀❤️
-https://www.instagram.com/ovmar_1`;
+هاذا هو الفيديو الخاص بك.. \nhttps://www.instagram.com/ovmar_1`;
 
     const response = await fetch(result.videoUrl);
     const arrayBuffer = await response.arrayBuffer();
@@ -32,7 +30,7 @@ https://www.instagram.com/ovmar_1`;
 };
 
 handler.help = ['facebook <url>'];
-handler.tags = ['downloader'];
+handler.tags = ['قائمة التحميل'];
 handler.command = /^((facebook|fb)(downloder|dl)?)$/i;
 handler.diamond = true;
 
